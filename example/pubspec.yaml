@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  progress_circle:
+    path: ../../progress_circle
 
 dev_dependencies:
   flutter_test:
