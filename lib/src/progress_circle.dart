@@ -1,10 +1,84 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:progress_circle/src/progress_circle_painter.dart';
 
+/// A progress circle box that sets restrictions to its painter and draws it.
 class ProgressCircle extends StatelessWidget {
-  const ProgressCircle({super.key});
+  /// A size of the widget.
+  final double boxSize;
+
+  /// Total value.
+  final int total;
+
+  /// Completed value.
+  final int completed;
+
+  /// A color of the progress curve.
+  final Color curveColor;
+
+  /// The outer circle width.
+  final int outerCircleWidth;
+
+  /// Should the head of the curve line be rounded.
+  final bool isRoundedHead;
+
+  /// The head's icon.
+  final IconData? headIcon;
+
+  /// The head icon size.
+  final double headIconSize;
+
+  /// Should the tail of the curve line be rounded.
+  final bool isRoundedTail;
+
+  /// The head's icon.
+  final IconData? tailIcon;
+
+  /// The head icon size.
+  final double tailIconSize;
+
+  /// An optional message in the center.
+  final String? centerMessage;
+
+  /// A text style for the center message.
+  final TextStyle? centerMessageStyle;
+
+  const ProgressCircle({
+    super.key,
+    required this.boxSize,
+    required this.total,
+    required this.completed,
+    this.curveColor = CupertinoColors.activeBlue,
+    this.outerCircleWidth = 35,
+    this.isRoundedHead = false,
+    this.headIcon,
+    this.headIconSize = 15.0,
+    this.isRoundedTail = false,
+    this.tailIcon,
+    this.tailIconSize = 15.0,
+    this.centerMessage,
+    this.centerMessageStyle,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Center(
+      child: CustomPaint(
+        size: Size.square(boxSize),
+        painter: ProgressCirclePainter(
+          total: total,
+          completed: completed,
+          curveColor: curveColor,
+          outerCircleWidth: outerCircleWidth,
+          isRoundedHead: isRoundedHead,
+          headIcon: headIcon,
+          headIconSize: headIconSize,
+          isRoundedTail: isRoundedTail,
+          tailIcon: tailIcon,
+          tailIconSize: tailIconSize,
+          centerMessage: centerMessage,
+          centerMessageStyle: centerMessageStyle,
+        ),
+      ),
+    );
   }
 }
