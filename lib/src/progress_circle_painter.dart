@@ -11,7 +11,7 @@ class ProgressCirclePainter extends CustomPainter {
   final int completed;
 
   /// A color of the progress curve.
-  final Color curveColor;
+  final Color progressColor;
 
   /// A Circle's arc width.
   final int arcWidth;
@@ -52,7 +52,7 @@ class ProgressCirclePainter extends CustomPainter {
   const ProgressCirclePainter({
     required this.total,
     required this.completed,
-    required this.curveColor,
+    required this.progressColor,
     required this.arcWidth,
     required this.isRoundedHead,
     required this.headIcon,
@@ -135,7 +135,7 @@ class ProgressCirclePainter extends CustomPainter {
     required Offset center,
   }) {
     const startAngle = 3 * pi / 2;
-    final curvePaint = Paint()..color = curveColor;
+    final curvePaint = Paint()..color = progressColor;
 
     canvas.drawArc(
       Rect.fromCircle(
@@ -173,7 +173,7 @@ class ProgressCirclePainter extends CustomPainter {
 
     if (completed <= 0) return;
     final headRadius = arcWidth / 2;
-    final headPaint = Paint()..color = curveColor;
+    final headPaint = Paint()..color = progressColor;
 
     final headPoint = Offset(size.width / 2 - headRadius, 0);
 

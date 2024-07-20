@@ -13,7 +13,7 @@ class ProgressCircle extends StatelessWidget {
   final int completed;
 
   /// A color of the progress curve.
-  final Color curveColor;
+  final Color progressColor;
 
   /// A Circle's arc width.
   final int arcWidth;
@@ -56,7 +56,7 @@ class ProgressCircle extends StatelessWidget {
     required this.boxSize,
     required this.total,
     required this.completed,
-    this.curveColor = Colors.blue,
+    this.progressColor = Colors.blue,
     this.arcWidth = 35,
     this.isRoundedHead = false,
     this.headIcon,
@@ -79,7 +79,7 @@ class ProgressCircle extends StatelessWidget {
         painter: ProgressCirclePainter(
           total: total,
           completed: completed,
-          curveColor: curveColor,
+          progressColor: progressColor,
           arcWidth: arcWidth,
           isRoundedHead: isRoundedHead,
           headIcon: headIcon,
