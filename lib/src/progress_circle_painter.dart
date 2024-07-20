@@ -13,8 +13,8 @@ class ProgressCirclePainter extends CustomPainter {
   /// A color of the progress curve.
   final Color curveColor;
 
-  /// The outer circle width.
-  final int outerCircleWidth;
+  /// A Circle's arc width.
+  final int arcWidth;
 
   /// Should the head of the curve line be rounded.
   final bool isRoundedHead;
@@ -40,11 +40,17 @@ class ProgressCirclePainter extends CustomPainter {
   /// A text style for the center message.
   final TextStyle? centerMessageStyle;
 
+  /// A color behind the circle.
+  final Color backgroundColor;
+
+  /// A color of the circle's arc.
+  final Color arcColor;
+
   const ProgressCirclePainter({
     required this.total,
     required this.completed,
     required this.curveColor,
-    required this.outerCircleWidth,
+    required this.arcWidth,
     required this.isRoundedHead,
     required this.headIcon,
     required this.headIconSize,
@@ -53,6 +59,8 @@ class ProgressCirclePainter extends CustomPainter {
     required this.tailIconSize,
     required this.centerMessage,
     required this.centerMessageStyle,
+    required this.backgroundColor,
+    required this.arcColor,
   })  : assert(total >= completed, "Total can't be less than completed"),
         assert(completed >= 0, "Completed can't be less than 0"),
         assert(total >= 0, "Total can't be less than 0");
@@ -61,11 +69,11 @@ class ProgressCirclePainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     assert(size.height == size.width, "A parent box must be square");
 
-    final whitePaint = Paint()..color = CupertinoColors.white;
-    final grayPaint = Paint()..color = CupertinoColors.systemGrey;
+    final innerCirclePaint = Paint()..color = backgroundColor;
+    final outerCirclePaint = Paint()..color = arcColor;
 
     final outerCircleRadius = size.width / 2;
-    final innerCircleRadius = outerCircleRadius - outerCircleWidth;
+    final innerCircleRadius = outerCircleRadius - arcWidth;
 
     final center = Offset(outerCircleRadius, outerCircleRadius);
 
@@ -73,7 +81,7 @@ class ProgressCirclePainter extends CustomPainter {
     canvas.drawCircle(
       center,
       outerCircleRadius,
-      grayPaint,
+      outerCirclePaint,
     );
 
     _drawProgressCurve(
@@ -86,7 +94,7 @@ class ProgressCirclePainter extends CustomPainter {
     canvas.drawCircle(
       center,
       innerCircleRadius,
-      whitePaint,
+      innerCirclePaint,
     );
 
     _maybeDrawText(
@@ -160,7 +168,7 @@ class ProgressCirclePainter extends CustomPainter {
     if (!isRoundedHead) return;
 
     if (completed <= 0) return;
-    final headRadius = outerCircleWidth / 2;
+    final headRadius = arcWidth / 2;
     final headPaint = Paint()..color = curveColor;
 
     final headPoint = Offset(size.width / 2 - headRadius, 0);

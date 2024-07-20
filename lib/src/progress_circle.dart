@@ -15,8 +15,8 @@ class ProgressCircle extends StatelessWidget {
   /// A color of the progress curve.
   final Color curveColor;
 
-  /// The outer circle width.
-  final int outerCircleWidth;
+  /// A Circle's arc width.
+  final int arcWidth;
 
   /// Should the head of the curve line be rounded.
   final bool isRoundedHead;
@@ -42,13 +42,19 @@ class ProgressCircle extends StatelessWidget {
   /// A text style for the center message.
   final TextStyle? centerMessageStyle;
 
+  /// A color behind the circle.
+  final Color backgroundColor;
+
+  /// A color of the circle's arc.
+  final Color arcColor;
+
   const ProgressCircle({
     super.key,
     required this.boxSize,
     required this.total,
     required this.completed,
     this.curveColor = CupertinoColors.activeBlue,
-    this.outerCircleWidth = 35,
+    this.arcWidth = 35,
     this.isRoundedHead = false,
     this.headIcon,
     this.headIconSize = 15.0,
@@ -57,6 +63,8 @@ class ProgressCircle extends StatelessWidget {
     this.tailIconSize = 15.0,
     this.centerMessage,
     this.centerMessageStyle,
+    this.backgroundColor = CupertinoColors.white,
+    this.arcColor = CupertinoColors.systemGrey,
   });
 
   @override
@@ -68,7 +76,7 @@ class ProgressCircle extends StatelessWidget {
           total: total,
           completed: completed,
           curveColor: curveColor,
-          outerCircleWidth: outerCircleWidth,
+          arcWidth: arcWidth,
           isRoundedHead: isRoundedHead,
           headIcon: headIcon,
           headIconSize: headIconSize,
@@ -77,6 +85,8 @@ class ProgressCircle extends StatelessWidget {
           tailIconSize: tailIconSize,
           centerMessage: centerMessage,
           centerMessageStyle: centerMessageStyle,
+          backgroundColor: backgroundColor,
+          arcColor: arcColor,
         ),
       ),
     );
