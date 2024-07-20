@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'dart:ui';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 /// A Painter for drawing a circle with its progress curve.
 class ProgressCirclePainter extends CustomPainter {
@@ -22,8 +22,11 @@ class ProgressCirclePainter extends CustomPainter {
   /// The head's icon.
   final IconData? headIcon;
 
-  /// The head icon size.
+  /// The head's icon size.
   final double headIconSize;
+
+  /// The head's icon color.
+  final Color headIconColor;
 
   /// Should the tail of the curve line be rounded.
   final bool isRoundedTail;
@@ -54,6 +57,7 @@ class ProgressCirclePainter extends CustomPainter {
     required this.isRoundedHead,
     required this.headIcon,
     required this.headIconSize,
+    required this.headIconColor,
     required this.isRoundedTail,
     required this.tailIcon,
     required this.tailIconSize,
@@ -211,7 +215,7 @@ class ProgressCirclePainter extends CustomPainter {
         fontFamily: headIcon!.fontFamily,
         package: headIcon!.fontPackage,
         fontSize: headIconSize,
-        color: CupertinoColors.white,
+        color: headIconColor,
       ),
     );
 

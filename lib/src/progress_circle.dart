@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:progress_circle/src/progress_circle_painter.dart';
 
 /// A progress circle box that sets restrictions to its painter and draws it.
@@ -27,6 +27,9 @@ class ProgressCircle extends StatelessWidget {
   /// The head icon size.
   final double headIconSize;
 
+  /// The head's icon color.
+  final Color headIconColor;
+
   /// Should the tail of the curve line be rounded.
   final bool isRoundedTail;
 
@@ -53,18 +56,19 @@ class ProgressCircle extends StatelessWidget {
     required this.boxSize,
     required this.total,
     required this.completed,
-    this.curveColor = CupertinoColors.activeBlue,
+    this.curveColor = Colors.blue,
     this.arcWidth = 35,
     this.isRoundedHead = false,
     this.headIcon,
     this.headIconSize = 15.0,
+    this.headIconColor = Colors.white,
     this.isRoundedTail = false,
     this.tailIcon,
     this.tailIconSize = 15.0,
     this.centerMessage,
     this.centerMessageStyle,
-    this.backgroundColor = CupertinoColors.white,
-    this.arcColor = CupertinoColors.systemGrey,
+    this.backgroundColor = Colors.white,
+    this.arcColor = const Color(0XFFEFEFF4),
   });
 
   @override
@@ -80,6 +84,7 @@ class ProgressCircle extends StatelessWidget {
           isRoundedHead: isRoundedHead,
           headIcon: headIcon,
           headIconSize: headIconSize,
+          headIconColor: headIconColor,
           isRoundedTail: isRoundedTail,
           tailIcon: tailIcon,
           tailIconSize: tailIconSize,
