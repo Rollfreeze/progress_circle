@@ -575,7 +575,7 @@ class MainApp extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 Text(
-                  'headIcon, tailIcon',
+                  'headIconColor, tailIconColor',
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 20),
@@ -716,7 +716,7 @@ class MainApp extends StatelessWidget {
                       boxSize: _boxSize,
                       completed: 0,
                       total: 8,
-                      centerMessage: 'You are\nbeautiful',
+                      centerMessage: 'You are\nbeautiful!',
                     ),
                     ProgressCircle(
                       boxSize: _boxSize,
@@ -724,7 +724,7 @@ class MainApp extends StatelessWidget {
                       total: 8,
                       isRoundedHead: true,
                       isRoundedTail: true,
-                      centerMessage: 'You are\nbeautiful',
+                      centerMessage: 'You are\nbeautiful!',
                     ),
                     ProgressCircle(
                       boxSize: _boxSize,
@@ -732,7 +732,7 @@ class MainApp extends StatelessWidget {
                       total: 8,
                       isRoundedHead: true,
                       isRoundedTail: true,
-                      centerMessage: 'You are\nbeautiful',
+                      centerMessage: 'You are\nbeautiful!',
                     ),
                     ProgressCircle(
                       boxSize: _boxSize,
@@ -740,7 +740,7 @@ class MainApp extends StatelessWidget {
                       total: 8,
                       isRoundedHead: true,
                       isRoundedTail: true,
-                      centerMessage: 'You are\nbeautiful',
+                      centerMessage: 'You are\nbeautiful!',
                     ),
                     ProgressCircle(
                       boxSize: _boxSize,
@@ -748,7 +748,7 @@ class MainApp extends StatelessWidget {
                       total: 8,
                       isRoundedHead: true,
                       isRoundedTail: true,
-                      centerMessage: 'You are\nbeautiful',
+                      centerMessage: 'You are\nbeautiful!',
                     ),
                     ProgressCircle(
                       boxSize: _boxSize,
@@ -756,7 +756,7 @@ class MainApp extends StatelessWidget {
                       total: 8,
                       isRoundedHead: true,
                       isRoundedTail: true,
-                      centerMessage: 'You are\nbeautiful',
+                      centerMessage: 'You are\nbeautiful!',
                     ),
                     ProgressCircle(
                       boxSize: _boxSize,
@@ -764,7 +764,7 @@ class MainApp extends StatelessWidget {
                       total: 8,
                       isRoundedHead: true,
                       isRoundedTail: true,
-                      centerMessage: 'You are\nbeautiful',
+                      centerMessage: 'You are\nbeautiful!',
                     ),
                     ProgressCircle(
                       boxSize: _boxSize,
@@ -772,7 +772,7 @@ class MainApp extends StatelessWidget {
                       total: 8,
                       isRoundedHead: true,
                       isRoundedTail: true,
-                      centerMessage: 'You are\nbeautiful',
+                      centerMessage: 'You are\nbeautiful!',
                     ),
                     ProgressCircle(
                       boxSize: _boxSize,
@@ -780,7 +780,7 @@ class MainApp extends StatelessWidget {
                       total: 8,
                       isRoundedHead: true,
                       isRoundedTail: true,
-                      centerMessage: 'You are\nbeautiful',
+                      centerMessage: 'You are\nbeautiful!',
                     ),
                   ],
                 ),
@@ -797,7 +797,7 @@ class MainApp extends StatelessWidget {
                       boxSize: _boxSize,
                       completed: 0,
                       total: 8,
-                      centerMessage: 'You are\nbeautiful',
+                      centerMessage: 'You are\nbeautiful!',
                       centerMessageStyle: TextStyle(color: Colors.blue, fontSize: 14),
                     ),
                     ProgressCircle(
@@ -806,7 +806,7 @@ class MainApp extends StatelessWidget {
                       total: 8,
                       isRoundedHead: true,
                       isRoundedTail: true,
-                      centerMessage: 'You are\nbeautiful',
+                      centerMessage: 'You are\nbeautiful!',
                       centerMessageStyle: TextStyle(color: Colors.blue, fontSize: 14),
                     ),
                     ProgressCircle(
@@ -815,7 +815,7 @@ class MainApp extends StatelessWidget {
                       total: 8,
                       isRoundedHead: true,
                       isRoundedTail: true,
-                      centerMessage: 'You are\nbeautiful',
+                      centerMessage: 'You are\nbeautiful!',
                       centerMessageStyle: TextStyle(color: Colors.blue, fontSize: 14),
                     ),
                     ProgressCircle(
@@ -824,7 +824,7 @@ class MainApp extends StatelessWidget {
                       total: 8,
                       isRoundedHead: true,
                       isRoundedTail: true,
-                      centerMessage: 'You are\nbeautiful',
+                      centerMessage: 'You are\nbeautiful!',
                       centerMessageStyle: TextStyle(color: Colors.blue, fontSize: 14),
                     ),
                     ProgressCircle(
@@ -833,7 +833,7 @@ class MainApp extends StatelessWidget {
                       total: 8,
                       isRoundedHead: true,
                       isRoundedTail: true,
-                      centerMessage: 'You are\nbeautiful',
+                      centerMessage: 'You are\nbeautiful!',
                       centerMessageStyle: TextStyle(color: Colors.blue, fontSize: 14),
                     ),
                     ProgressCircle(
@@ -842,7 +842,7 @@ class MainApp extends StatelessWidget {
                       total: 8,
                       isRoundedHead: true,
                       isRoundedTail: true,
-                      centerMessage: 'You are\nbeautiful',
+                      centerMessage: 'You are\nbeautiful!',
                       centerMessageStyle: TextStyle(color: Colors.blue, fontSize: 14),
                     ),
                     ProgressCircle(
@@ -851,7 +851,7 @@ class MainApp extends StatelessWidget {
                       total: 8,
                       isRoundedHead: true,
                       isRoundedTail: true,
-                      centerMessage: 'You are\nbeautiful',
+                      centerMessage: 'You are\nbeautiful!',
                       centerMessageStyle: TextStyle(color: Colors.blue, fontSize: 14),
                     ),
                     ProgressCircle(
@@ -860,7 +860,7 @@ class MainApp extends StatelessWidget {
                       total: 8,
                       isRoundedHead: true,
                       isRoundedTail: true,
-                      centerMessage: 'You are\nbeautiful',
+                      centerMessage: 'You are\nbeautiful!',
                       centerMessageStyle: TextStyle(color: Colors.blue, fontSize: 14),
                     ),
                     ProgressCircle(
@@ -869,7 +869,7 @@ class MainApp extends StatelessWidget {
                       total: 8,
                       isRoundedHead: true,
                       isRoundedTail: true,
-                      centerMessage: 'You are\nbeautiful',
+                      centerMessage: 'You are\nbeautiful!',
                       centerMessageStyle: TextStyle(color: Colors.blue, fontSize: 14),
                     ),
                   ],
