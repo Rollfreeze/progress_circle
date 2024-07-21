@@ -315,7 +315,11 @@ class ProgressCirclePainter extends CustomPainter {
 
     final textSpan = TextSpan(
       text: centerMessage,
-      style: centerMessageStyle,
+      style: centerMessageStyle ??
+          const TextStyle(
+            color: Colors.black,
+            fontSize: 14,
+          ),
     );
 
     final textPainter = TextPainter(
