@@ -11,7 +11,7 @@ class ProgressCirclePainter extends CustomPainter {
   final int completed;
 
   /// A color of the progress curve.
-  final Color curveColor;
+  final Color progressArcColor;
 
   /// A Circle's arc width.
   final int arcWidth;
@@ -44,7 +44,7 @@ class ProgressCirclePainter extends CustomPainter {
   final TextStyle? centerMessageStyle;
 
   /// A color behind the circle.
-  final Color backgroundColor;
+  final Color innerColor;
 
   /// A color of the circle's arc.
   final Color arcColor;
@@ -52,7 +52,7 @@ class ProgressCirclePainter extends CustomPainter {
   const ProgressCirclePainter({
     required this.total,
     required this.completed,
-    required this.curveColor,
+    required this.progressArcColor,
     required this.arcWidth,
     required this.isRoundedHead,
     required this.headIcon,
@@ -63,7 +63,7 @@ class ProgressCirclePainter extends CustomPainter {
     required this.tailIconSize,
     required this.centerMessage,
     required this.centerMessageStyle,
-    required this.backgroundColor,
+    required this.innerColor,
     required this.arcColor,
   })  : assert(total >= completed, "Total can't be less than completed"),
         assert(completed >= 0, "Completed can't be less than 0"),
@@ -73,7 +73,7 @@ class ProgressCirclePainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     assert(size.height == size.width, "A parent box must be square");
 
-    final innerCirclePaint = Paint()..color = backgroundColor;
+    final innerCirclePaint = Paint()..color = innerColor;
     final outerCirclePaint = Paint()..color = arcColor;
 
     final outerCircleRadius = size.width / 2;
@@ -135,7 +135,7 @@ class ProgressCirclePainter extends CustomPainter {
     required Offset center,
   }) {
     const startAngle = 3 * pi / 2;
-    final curvePaint = Paint()..color = curveColor;
+    final curvePaint = Paint()..color = progressArcColor;
 
     canvas.drawArc(
       Rect.fromCircle(
@@ -173,7 +173,7 @@ class ProgressCirclePainter extends CustomPainter {
 
     if (completed <= 0) return;
     final headRadius = arcWidth / 2;
-    final headPaint = Paint()..color = curveColor;
+    final headPaint = Paint()..color = progressArcColor;
 
     final headPoint = Offset(size.width / 2 - headRadius, 0);
 

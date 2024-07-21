@@ -13,7 +13,7 @@ class ProgressCircle extends StatelessWidget {
   final int completed;
 
   /// A color of the progress curve.
-  final Color curveColor;
+  final Color progressArcColor;
 
   /// A Circle's arc width.
   final int arcWidth;
@@ -46,7 +46,7 @@ class ProgressCircle extends StatelessWidget {
   final TextStyle? centerMessageStyle;
 
   /// A color behind the circle.
-  final Color backgroundColor;
+  final Color innerColor;
 
   /// A color of the circle's arc.
   final Color arcColor;
@@ -56,7 +56,7 @@ class ProgressCircle extends StatelessWidget {
     required this.boxSize,
     required this.total,
     required this.completed,
-    this.curveColor = Colors.blue,
+    this.progressArcColor = Colors.blue,
     this.arcWidth = 35,
     this.isRoundedHead = false,
     this.headIcon,
@@ -67,7 +67,7 @@ class ProgressCircle extends StatelessWidget {
     this.tailIconSize = 15.0,
     this.centerMessage,
     this.centerMessageStyle,
-    this.backgroundColor = Colors.white,
+    this.innerColor = Colors.white,
     this.arcColor = const Color(0XFFEFEFF4),
   });
 
@@ -79,7 +79,7 @@ class ProgressCircle extends StatelessWidget {
         painter: ProgressCirclePainter(
           total: total,
           completed: completed,
-          curveColor: curveColor,
+          progressArcColor: progressArcColor,
           arcWidth: arcWidth,
           isRoundedHead: isRoundedHead,
           headIcon: headIcon,
@@ -90,7 +90,7 @@ class ProgressCircle extends StatelessWidget {
           tailIconSize: tailIconSize,
           centerMessage: centerMessage,
           centerMessageStyle: centerMessageStyle,
-          backgroundColor: backgroundColor,
+          innerColor: innerColor,
           arcColor: arcColor,
         ),
       ),
