@@ -683,6 +683,107 @@ class MainApp extends StatelessWidget {
                     ),
                   ],
                 ),
+                //////////////////
+                //////////////////
+                //////////////////
+                //////////////////
+                //////////////////
+                SizedBox(height: 200),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text('0/8'),
+                    Text('1/8'),
+                    Text('2/8'),
+                    Text('3/8'),
+                    Text('4/8'),
+                    Text('5/8'),
+                    Text('6/8'),
+                    Text('7/8'),
+                    Text('8/8'),
+                  ],
+                ),
+                SizedBox(height: 20),
+                Text(
+                  'progressArcColor',
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 0,
+                      total: 8,
+                      progressArcColor: Colors.orange,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 1,
+                      total: 8,
+                      isRoundedHead: true,
+                      isRoundedTail: true,
+                      progressArcColor: Colors.orange,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 2,
+                      total: 8,
+                      isRoundedHead: true,
+                      isRoundedTail: true,
+                      progressArcColor: Colors.orange,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 3,
+                      total: 8,
+                      isRoundedHead: true,
+                      isRoundedTail: true,
+                      progressArcColor: Colors.orange,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 4,
+                      total: 8,
+                      isRoundedHead: true,
+                      isRoundedTail: true,
+                      progressArcColor: Colors.orange,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 5,
+                      total: 8,
+                      isRoundedHead: true,
+                      isRoundedTail: true,
+                      progressArcColor: Colors.orange,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 6,
+                      total: 8,
+                      isRoundedHead: true,
+                      isRoundedTail: true,
+                      progressArcColor: Colors.orange,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 7,
+                      total: 8,
+                      isRoundedHead: true,
+                      isRoundedTail: true,
+                      progressArcColor: Colors.orange,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 8,
+                      total: 8,
+                      isRoundedHead: true,
+                      isRoundedTail: true,
+                      progressArcColor: Colors.orange,
+                    ),
+                  ],
+                ),
                 // SizedBox(height: 20),
                 // Text(
                 //   'progressArcColor:',
