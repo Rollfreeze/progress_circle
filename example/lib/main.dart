@@ -91,136 +91,6 @@ class MainApp extends StatelessWidget {
                     ),
                   ],
                 ),
-                // SizedBox(height: 20),
-                // Text(
-                //   'progressArcColor:',
-                //   textAlign: TextAlign.center,
-                // ),
-                // SizedBox(height: 20),
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                //   children: [
-                //     ProgressCircle(
-                //       boxSize: _boxSize,
-                //       completed: 0,
-                //       total: 8,
-                //       progressArcColor: Colors.orange,
-                //     ),
-                //     ProgressCircle(
-                //       boxSize: _boxSize,
-                //       completed: 1,
-                //       total: 8,
-                //       progressArcColor: Colors.orange,
-                //     ),
-                //     ProgressCircle(
-                //       boxSize: _boxSize,
-                //       completed: 2,
-                //       total: 8,
-                //       progressArcColor: Colors.orange,
-                //     ),
-                //     ProgressCircle(
-                //       boxSize: _boxSize,
-                //       completed: 3,
-                //       total: 8,
-                //       progressArcColor: Colors.orange,
-                //     ),
-                //     ProgressCircle(
-                //       boxSize: _boxSize,
-                //       completed: 4,
-                //       total: 8,
-                //       progressArcColor: Colors.orange,
-                //     ),
-                //     ProgressCircle(
-                //       boxSize: _boxSize,
-                //       completed: 5,
-                //       total: 8,
-                //       progressArcColor: Colors.orange,
-                //     ),
-                //     ProgressCircle(
-                //       boxSize: _boxSize,
-                //       completed: 6,
-                //       total: 8,
-                //       progressArcColor: Colors.orange,
-                //     ),
-                //     ProgressCircle(
-                //       boxSize: _boxSize,
-                //       completed: 7,
-                //       total: 8,
-                //       progressArcColor: Colors.orange,
-                //     ),
-                //     ProgressCircle(
-                //       boxSize: _boxSize,
-                //       completed: 8,
-                //       total: 8,
-                //       progressArcColor: Colors.orange,
-                //     ),
-                //   ],
-                // ),
-                // SizedBox(height: 20),
-                // Text(
-                //   'arcColor:',
-                //   textAlign: TextAlign.center,
-                // ),
-                // SizedBox(height: 20),
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                //   children: [
-                //     ProgressCircle(
-                //       boxSize: _boxSize,
-                //       completed: 0,
-                //       total: 8,
-                //       arcColor: Colors.black12,
-                //     ),
-                //     ProgressCircle(
-                //       boxSize: _boxSize,
-                //       completed: 1,
-                //       total: 8,
-                //       arcColor: Colors.black12,
-                //     ),
-                //     ProgressCircle(
-                //       boxSize: _boxSize,
-                //       completed: 2,
-                //       total: 8,
-                //       arcColor: Colors.black12,
-                //     ),
-                //     ProgressCircle(
-                //       boxSize: _boxSize,
-                //       completed: 3,
-                //       total: 8,
-                //       arcColor: Colors.black12,
-                //     ),
-                //     ProgressCircle(
-                //       boxSize: _boxSize,
-                //       completed: 4,
-                //       total: 8,
-                //       arcColor: Colors.black12,
-                //     ),
-                //     ProgressCircle(
-                //       boxSize: _boxSize,
-                //       completed: 5,
-                //       total: 8,
-                //       arcColor: Colors.black12,
-                //     ),
-                //     ProgressCircle(
-                //       boxSize: _boxSize,
-                //       completed: 6,
-                //       total: 8,
-                //       arcColor: Colors.black12,
-                //     ),
-                //     ProgressCircle(
-                //       boxSize: _boxSize,
-                //       completed: 7,
-                //       total: 8,
-                //       arcColor: Colors.black12,
-                //     ),
-                //     ProgressCircle(
-                //       boxSize: _boxSize,
-                //       completed: 8,
-                //       total: 8,
-                //       arcColor: Colors.black12,
-                //     ),
-                //   ],
-                // ),
                 SizedBox(height: 20),
                 Text(
                   'isRoundedHead: true',
@@ -425,13 +295,142 @@ class MainApp extends StatelessWidget {
                     ),
                   ],
                 ),
-
-                ////////////////////
-                ////////////////////
-                ////////////////////
-                ////////////////////
-                ////////////////////
-                // SizedBox(height: 200),
+                //////////////////
+                //////////////////
+                //////////////////
+                //////////////////
+                //////////////////
+                SizedBox(height: 200),
+                // SizedBox(height: 20),
+                // Text(
+                //   'progressArcColor:',
+                //   textAlign: TextAlign.center,
+                // ),
+                // SizedBox(height: 20),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                //   children: [
+                //     ProgressCircle(
+                //       boxSize: _boxSize,
+                //       completed: 0,
+                //       total: 8,
+                //       progressArcColor: Colors.orange,
+                //     ),
+                //     ProgressCircle(
+                //       boxSize: _boxSize,
+                //       completed: 1,
+                //       total: 8,
+                //       progressArcColor: Colors.orange,
+                //     ),
+                //     ProgressCircle(
+                //       boxSize: _boxSize,
+                //       completed: 2,
+                //       total: 8,
+                //       progressArcColor: Colors.orange,
+                //     ),
+                //     ProgressCircle(
+                //       boxSize: _boxSize,
+                //       completed: 3,
+                //       total: 8,
+                //       progressArcColor: Colors.orange,
+                //     ),
+                //     ProgressCircle(
+                //       boxSize: _boxSize,
+                //       completed: 4,
+                //       total: 8,
+                //       progressArcColor: Colors.orange,
+                //     ),
+                //     ProgressCircle(
+                //       boxSize: _boxSize,
+                //       completed: 5,
+                //       total: 8,
+                //       progressArcColor: Colors.orange,
+                //     ),
+                //     ProgressCircle(
+                //       boxSize: _boxSize,
+                //       completed: 6,
+                //       total: 8,
+                //       progressArcColor: Colors.orange,
+                //     ),
+                //     ProgressCircle(
+                //       boxSize: _boxSize,
+                //       completed: 7,
+                //       total: 8,
+                //       progressArcColor: Colors.orange,
+                //     ),
+                //     ProgressCircle(
+                //       boxSize: _boxSize,
+                //       completed: 8,
+                //       total: 8,
+                //       progressArcColor: Colors.orange,
+                //     ),
+                //   ],
+                // ),
+                // SizedBox(height: 20),
+                // Text(
+                //   'arcColor:',
+                //   textAlign: TextAlign.center,
+                // ),
+                // SizedBox(height: 20),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                //   children: [
+                //     ProgressCircle(
+                //       boxSize: _boxSize,
+                //       completed: 0,
+                //       total: 8,
+                //       arcColor: Colors.black12,
+                //     ),
+                //     ProgressCircle(
+                //       boxSize: _boxSize,
+                //       completed: 1,
+                //       total: 8,
+                //       arcColor: Colors.black12,
+                //     ),
+                //     ProgressCircle(
+                //       boxSize: _boxSize,
+                //       completed: 2,
+                //       total: 8,
+                //       arcColor: Colors.black12,
+                //     ),
+                //     ProgressCircle(
+                //       boxSize: _boxSize,
+                //       completed: 3,
+                //       total: 8,
+                //       arcColor: Colors.black12,
+                //     ),
+                //     ProgressCircle(
+                //       boxSize: _boxSize,
+                //       completed: 4,
+                //       total: 8,
+                //       arcColor: Colors.black12,
+                //     ),
+                //     ProgressCircle(
+                //       boxSize: _boxSize,
+                //       completed: 5,
+                //       total: 8,
+                //       arcColor: Colors.black12,
+                //     ),
+                //     ProgressCircle(
+                //       boxSize: _boxSize,
+                //       completed: 6,
+                //       total: 8,
+                //       arcColor: Colors.black12,
+                //     ),
+                //     ProgressCircle(
+                //       boxSize: _boxSize,
+                //       completed: 7,
+                //       total: 8,
+                //       arcColor: Colors.black12,
+                //     ),
+                //     ProgressCircle(
+                //       boxSize: _boxSize,
+                //       completed: 8,
+                //       total: 8,
+                //       arcColor: Colors.black12,
+                //     ),
+                //   ],
+                // ),
                 // SizedBox(height: 20),
                 // Text(
                 //   'isRoundedHead: true',
