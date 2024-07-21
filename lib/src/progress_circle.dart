@@ -13,7 +13,7 @@ class ProgressCircle extends StatelessWidget {
   final int completed;
 
   /// A color of the progress curve.
-  final Color progressColor;
+  final Color progressArcColor;
 
   /// A Circle's arc width.
   final int arcWidth;
@@ -39,6 +39,9 @@ class ProgressCircle extends StatelessWidget {
   /// The head icon size.
   final double tailIconSize;
 
+  /// The tails's icon color.
+  final Color tailIconColor;
+
   /// An optional message in the center.
   final String? centerMessage;
 
@@ -46,7 +49,7 @@ class ProgressCircle extends StatelessWidget {
   final TextStyle? centerMessageStyle;
 
   /// A color behind the circle.
-  final Color backgroundColor;
+  final Color innerColor;
 
   /// A color of the circle's arc.
   final Color arcColor;
@@ -56,7 +59,7 @@ class ProgressCircle extends StatelessWidget {
     required this.boxSize,
     required this.total,
     required this.completed,
-    this.progressColor = Colors.blue,
+    this.progressArcColor = Colors.blue,
     this.arcWidth = 35,
     this.isRoundedHead = false,
     this.headIcon,
@@ -65,9 +68,10 @@ class ProgressCircle extends StatelessWidget {
     this.isRoundedTail = false,
     this.tailIcon,
     this.tailIconSize = 15.0,
+    this.tailIconColor = Colors.white,
     this.centerMessage,
     this.centerMessageStyle,
-    this.backgroundColor = Colors.white,
+    this.innerColor = Colors.white,
     this.arcColor = const Color(0XFFEFEFF4),
   });
 
@@ -79,7 +83,7 @@ class ProgressCircle extends StatelessWidget {
         painter: ProgressCirclePainter(
           total: total,
           completed: completed,
-          progressColor: progressColor,
+          progressArcColor: progressArcColor,
           arcWidth: arcWidth,
           isRoundedHead: isRoundedHead,
           headIcon: headIcon,
@@ -88,9 +92,10 @@ class ProgressCircle extends StatelessWidget {
           isRoundedTail: isRoundedTail,
           tailIcon: tailIcon,
           tailIconSize: tailIconSize,
+          tailIconColor: tailIconColor,
           centerMessage: centerMessage,
           centerMessageStyle: centerMessageStyle,
-          backgroundColor: backgroundColor,
+          innerColor: innerColor,
           arcColor: arcColor,
         ),
       ),
