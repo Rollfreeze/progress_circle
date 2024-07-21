@@ -110,6 +110,12 @@ class ProgressCirclePainter extends CustomPainter {
       innerRadius: innerCircleRadius * 2,
     );
 
+    _maybeDrawProgressTail(
+      canvas: canvas,
+      size: size,
+      center: center,
+    );
+
     _maybeDrawProgressHead(
       canvas: canvas,
       size: size,
@@ -190,6 +196,32 @@ class ProgressCirclePainter extends CustomPainter {
       headPoint: headPoint,
       canvas: canvas,
     );
+  }
+
+  /// Draws a progress curve rounded head.
+  void _maybeDrawProgressTail({
+    required Canvas canvas,
+    required Size size,
+    required Offset center,
+  }) {
+    if (!isRoundedTail) return;
+
+    if (completed <= 0) return;
+    final headRadius = arcWidth / 2;
+    final headPaint = Paint()..color = progressArcColor;
+
+    final headPoint = Offset(size.width / 2, headRadius);
+
+    canvas.drawCircle(
+      headPoint,
+      headRadius,
+      headPaint,
+    );
+
+    // _maybeDrawProgressHeadIcon(
+    //   headPoint: headPoint,
+    //   canvas: canvas,
+    // );
   }
 
   void _maybeDrawProgressHeadIcon({
