@@ -301,6 +301,20 @@ class MainApp extends StatelessWidget {
                 //////////////////
                 //////////////////
                 SizedBox(height: 200),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text('0/8'),
+                    Text('1/8'),
+                    Text('2/8'),
+                    Text('3/8'),
+                    Text('4/8'),
+                    Text('5/8'),
+                    Text('6/8'),
+                    Text('7/8'),
+                    Text('8/8'),
+                  ],
+                ),
                 SizedBox(height: 20),
                 Text(
                   'headIcon',
