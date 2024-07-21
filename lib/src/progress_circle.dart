@@ -39,6 +39,9 @@ class ProgressCircle extends StatelessWidget {
   /// The head icon size.
   final double tailIconSize;
 
+  /// The tails's icon color.
+  final Color tailIconColor;
+
   /// An optional message in the center.
   final String? centerMessage;
 
@@ -65,6 +68,7 @@ class ProgressCircle extends StatelessWidget {
     this.isRoundedTail = false,
     this.tailIcon,
     this.tailIconSize = 15.0,
+    this.tailIconColor = Colors.white,
     this.centerMessage,
     this.centerMessageStyle,
     this.innerColor = Colors.white,
@@ -88,6 +92,7 @@ class ProgressCircle extends StatelessWidget {
           isRoundedTail: isRoundedTail,
           tailIcon: tailIcon,
           tailIconSize: tailIconSize,
+          tailIconColor: tailIconColor,
           centerMessage: centerMessage,
           centerMessageStyle: centerMessageStyle,
           innerColor: innerColor,

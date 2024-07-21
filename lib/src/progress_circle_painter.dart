@@ -31,11 +31,14 @@ class ProgressCirclePainter extends CustomPainter {
   /// Should the tail of the curve line be rounded.
   final bool isRoundedTail;
 
-  /// The head's icon.
+  /// The tail's icon.
   final IconData? tailIcon;
 
-  /// The head icon size.
+  /// The tail icon size.
   final double tailIconSize;
+
+  /// The tails's icon color.
+  final Color tailIconColor;
 
   /// An optional message in the center.
   final String? centerMessage;
@@ -61,6 +64,7 @@ class ProgressCirclePainter extends CustomPainter {
     required this.isRoundedTail,
     required this.tailIcon,
     required this.tailIconSize,
+    required this.tailIconColor,
     required this.centerMessage,
     required this.centerMessageStyle,
     required this.innerColor,
@@ -68,6 +72,9 @@ class ProgressCirclePainter extends CustomPainter {
   })  : assert(total >= completed, "Total can't be less than completed"),
         assert(completed >= 0, "Completed can't be less than 0"),
         assert(total >= 0, "Total can't be less than 0");
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -123,13 +130,11 @@ class ProgressCirclePainter extends CustomPainter {
     );
   }
 
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+  double get _completedPercent => completed * 100 / total;
 
   double get _progressSweepAngle {
     const oneDegree = pi / 180;
-    final completedPercent = completed * 100 / total;
-    final progressCurvePercent = 360 * completedPercent / 100;
+    final progressCurvePercent = 360 * _completedPercent / 100;
     final sweepAngle = oneDegree * progressCurvePercent;
     return sweepAngle;
   }
@@ -198,37 +203,12 @@ class ProgressCirclePainter extends CustomPainter {
     );
   }
 
-  /// Draws a progress curve rounded head.
-  void _maybeDrawProgressTail({
-    required Canvas canvas,
-    required Size size,
-    required Offset center,
-  }) {
-    if (!isRoundedTail) return;
-
-    if (completed <= 0) return;
-    final headRadius = arcWidth / 2;
-    final headPaint = Paint()..color = progressArcColor;
-
-    final headPoint = Offset(size.width / 2, headRadius);
-
-    canvas.drawCircle(
-      headPoint,
-      headRadius,
-      headPaint,
-    );
-
-    // _maybeDrawProgressHeadIcon(
-    //   headPoint: headPoint,
-    //   canvas: canvas,
-    // );
-  }
-
   void _maybeDrawProgressHeadIcon({
     required Offset headPoint,
     required Canvas canvas,
   }) {
     if (headIcon == null) return;
+    if (_completedPercent >= 100) return;
 
     canvas.translate(headPoint.dx, headPoint.dy);
     _rotateProgressCounterclockwise(canvas: canvas);
@@ -255,6 +235,67 @@ class ProgressCirclePainter extends CustomPainter {
     iconPainter.paint(
       iconCanvas,
       Offset(iconOffset, iconOffset),
+    );
+
+    final picture = pictureRecorder.endRecording();
+    canvas.drawPicture(picture);
+  }
+
+  /// Draws a progress curve rounded head.
+  void _maybeDrawProgressTail({
+    required Canvas canvas,
+    required Size size,
+    required Offset center,
+  }) {
+    if (!isRoundedTail) return;
+
+    if (completed <= 0) return;
+    final headRadius = arcWidth / 2;
+    final headPaint = Paint()..color = progressArcColor;
+
+    final headPoint = Offset(size.width / 2, headRadius);
+
+    canvas.drawCircle(
+      headPoint,
+      headRadius,
+      headPaint,
+    );
+
+    _maybeDrawProgressTailIcon(
+      headPoint: headPoint,
+      canvas: canvas,
+    );
+  }
+
+  void _maybeDrawProgressTailIcon({
+    required Offset headPoint,
+    required Canvas canvas,
+  }) {
+    if (tailIcon == null) return;
+    if (_completedPercent <= 0) return;
+
+    final iconOffset = -headIconSize / 2;
+    final pictureRecorder = PictureRecorder();
+    final iconCanvas = Canvas(pictureRecorder);
+
+    final iconPainter = TextPainter(
+      textDirection: TextDirection.ltr,
+    );
+
+    iconPainter.text = TextSpan(
+      text: String.fromCharCode(tailIcon!.codePoint),
+      style: TextStyle(
+        fontFamily: tailIcon!.fontFamily,
+        package: tailIcon!.fontPackage,
+        fontSize: tailIconSize,
+        color: tailIconColor,
+      ),
+    );
+
+    iconPainter.layout();
+    iconPainter.paint(
+      iconCanvas,
+      Offset(headPoint.dx + iconOffset, headPoint.dy + iconOffset),
     );
 
     final picture = pictureRecorder.endRecording();
