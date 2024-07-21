@@ -20,8 +20,8 @@ class MainApp extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(_indent),
             child: ListView(
-              children: [
-                const Row(
+              children: const [
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text('0/8'),
@@ -35,13 +35,13 @@ class MainApp extends StatelessWidget {
                     Text('8/8'),
                   ],
                 ),
-                const SizedBox(height: 20),
-                const Text(
+                SizedBox(height: 20),
+                Text(
                   'default arguments:',
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 20),
-                const Row(
+                SizedBox(height: 20),
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     ProgressCircle(
@@ -91,151 +91,12 @@ class MainApp extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 20),
-                const Text(
+                SizedBox(height: 20),
+                Text(
                   'progressArcColor:',
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 20),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    ProgressCircle(
-                      boxSize: _boxSize,
-                      completed: 0,
-                      total: 8,
-                      progressArcColor: Colors.orange,
-                    ),
-                    ProgressCircle(
-                      boxSize: _boxSize,
-                      completed: 1,
-                      total: 8,
-                      progressArcColor: Colors.orange,
-                    ),
-                    ProgressCircle(
-                      boxSize: _boxSize,
-                      completed: 2,
-                      total: 8,
-                      progressArcColor: Colors.orange,
-                    ),
-                    ProgressCircle(
-                      boxSize: _boxSize,
-                      completed: 3,
-                      total: 8,
-                      progressArcColor: Colors.orange,
-                    ),
-                    ProgressCircle(
-                      boxSize: _boxSize,
-                      completed: 4,
-                      total: 8,
-                      progressArcColor: Colors.orange,
-                    ),
-                    ProgressCircle(
-                      boxSize: _boxSize,
-                      completed: 5,
-                      total: 8,
-                      progressArcColor: Colors.orange,
-                    ),
-                    ProgressCircle(
-                      boxSize: _boxSize,
-                      completed: 6,
-                      total: 8,
-                      progressArcColor: Colors.orange,
-                    ),
-                    ProgressCircle(
-                      boxSize: _boxSize,
-                      completed: 7,
-                      total: 8,
-                      progressArcColor: Colors.orange,
-                    ),
-                    ProgressCircle(
-                      boxSize: _boxSize,
-                      completed: 8,
-                      total: 8,
-                      progressArcColor: Colors.orange,
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                const Text(
-                  'arcColor:',
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 20),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    ProgressCircle(
-                      boxSize: _boxSize,
-                      completed: 0,
-                      total: 8,
-                      progressArcColor: Colors.orange,
-                      arcColor: Colors.black26,
-                    ),
-                    ProgressCircle(
-                      boxSize: _boxSize,
-                      completed: 1,
-                      total: 8,
-                      progressArcColor: Colors.orange,
-                      arcColor: Colors.black26,
-                    ),
-                    ProgressCircle(
-                      boxSize: _boxSize,
-                      completed: 2,
-                      total: 8,
-                      progressArcColor: Colors.orange,
-                      arcColor: Colors.black26,
-                    ),
-                    ProgressCircle(
-                      boxSize: _boxSize,
-                      completed: 3,
-                      total: 8,
-                      progressArcColor: Colors.orange,
-                      arcColor: Colors.black26,
-                    ),
-                    ProgressCircle(
-                      boxSize: _boxSize,
-                      completed: 4,
-                      total: 8,
-                      progressArcColor: Colors.orange,
-                      arcColor: Colors.black26,
-                    ),
-                    ProgressCircle(
-                      boxSize: _boxSize,
-                      completed: 5,
-                      total: 8,
-                      progressArcColor: Colors.orange,
-                      arcColor: Colors.black26,
-                    ),
-                    ProgressCircle(
-                      boxSize: _boxSize,
-                      completed: 6,
-                      total: 8,
-                      progressArcColor: Colors.orange,
-                      arcColor: Colors.black26,
-                    ),
-                    ProgressCircle(
-                      boxSize: _boxSize,
-                      completed: 7,
-                      total: 8,
-                      progressArcColor: Colors.orange,
-                      arcColor: Colors.black26,
-                    ),
-                    ProgressCircle(
-                      boxSize: _boxSize,
-                      completed: 8,
-                      total: 8,
-                      progressArcColor: Colors.orange,
-                      arcColor: Colors.black26,
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                const Text(
-                  'innerColor:',
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 20),
+                SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -244,75 +105,194 @@ class MainApp extends StatelessWidget {
                       completed: 0,
                       total: 8,
                       progressArcColor: Colors.orange,
-                      arcColor: Colors.black26,
-                      innerColor: Theme.of(context).scaffoldBackgroundColor,
                     ),
                     ProgressCircle(
                       boxSize: _boxSize,
                       completed: 1,
                       total: 8,
                       progressArcColor: Colors.orange,
-                      arcColor: Colors.black26,
-                      innerColor: Theme.of(context).scaffoldBackgroundColor,
                     ),
                     ProgressCircle(
                       boxSize: _boxSize,
                       completed: 2,
                       total: 8,
                       progressArcColor: Colors.orange,
-                      arcColor: Colors.black26,
-                      innerColor: Theme.of(context).scaffoldBackgroundColor,
                     ),
                     ProgressCircle(
                       boxSize: _boxSize,
                       completed: 3,
                       total: 8,
                       progressArcColor: Colors.orange,
-                      arcColor: Colors.black26,
-                      innerColor: Theme.of(context).scaffoldBackgroundColor,
                     ),
                     ProgressCircle(
                       boxSize: _boxSize,
                       completed: 4,
                       total: 8,
                       progressArcColor: Colors.orange,
-                      arcColor: Colors.black26,
-                      innerColor: Theme.of(context).scaffoldBackgroundColor,
                     ),
                     ProgressCircle(
                       boxSize: _boxSize,
                       completed: 5,
                       total: 8,
                       progressArcColor: Colors.orange,
-                      arcColor: Colors.black26,
-                      innerColor: Theme.of(context).scaffoldBackgroundColor,
                     ),
                     ProgressCircle(
                       boxSize: _boxSize,
                       completed: 6,
                       total: 8,
                       progressArcColor: Colors.orange,
-                      arcColor: Colors.black26,
-                      innerColor: Theme.of(context).scaffoldBackgroundColor,
                     ),
                     ProgressCircle(
                       boxSize: _boxSize,
                       completed: 7,
                       total: 8,
                       progressArcColor: Colors.orange,
-                      arcColor: Colors.black26,
-                      innerColor: Theme.of(context).scaffoldBackgroundColor,
                     ),
                     ProgressCircle(
                       boxSize: _boxSize,
                       completed: 8,
                       total: 8,
                       progressArcColor: Colors.orange,
-                      arcColor: Colors.black26,
-                      innerColor: Theme.of(context).scaffoldBackgroundColor,
                     ),
                   ],
                 ),
+                SizedBox(height: 20),
+                Text(
+                  'arcColor:',
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 0,
+                      total: 8,
+                      arcColor: Colors.black12,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 1,
+                      total: 8,
+                      arcColor: Colors.black12,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 2,
+                      total: 8,
+                      arcColor: Colors.black12,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 3,
+                      total: 8,
+                      arcColor: Colors.black12,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 4,
+                      total: 8,
+                      arcColor: Colors.black12,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 5,
+                      total: 8,
+                      arcColor: Colors.black12,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 6,
+                      total: 8,
+                      arcColor: Colors.black12,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 7,
+                      total: 8,
+                      arcColor: Colors.black12,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 8,
+                      total: 8,
+                      arcColor: Colors.black12,
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                Text(
+                  'isRoundedHead: true',
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 0,
+                      total: 8,
+                      isRoundedHead: true,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 1,
+                      total: 8,
+                      isRoundedHead: true,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 2,
+                      total: 8,
+                      isRoundedHead: true,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 3,
+                      total: 8,
+                      isRoundedHead: true,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 4,
+                      total: 8,
+                      isRoundedHead: true,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 5,
+                      total: 8,
+                      isRoundedHead: true,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 6,
+                      total: 8,
+                      isRoundedHead: true,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 7,
+                      total: 8,
+                      isRoundedHead: true,
+                    ),
+                    ProgressCircle(
+                      boxSize: _boxSize,
+                      completed: 8,
+                      total: 8,
+                      isRoundedHead: true,
+                    ),
+                  ],
+                ),
+
+                ////////////////////
+                ////////////////////
+                ////////////////////
+                ////////////////////
+                ////////////////////
+                SizedBox(height: 200),
               ],
             ),
           ),
