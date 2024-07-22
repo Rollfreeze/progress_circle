@@ -8,9 +8,16 @@ The widget is quite simple in useand customizable
 so you may play with it to choose the appropriate configuration.
 Here are some basic states which you can combine to get the necessary customization:
 
+## Round your arc's head or tail
 ![Round your arc's head or tail](ex1.png)
+
+## Set any icon to any part
 ![Set any icon to any part](ex2.png)
+
+## Set some message and change the width
 ![Set some message and change the width](ex3.png)
+
+## Set any color you want
 ![Set any color you want](ex4.png)
 
 ## Getting started
