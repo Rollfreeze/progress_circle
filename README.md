@@ -20,22 +20,68 @@ Here are some basic states which you can combine to get the necessary customizat
 ## Set any color you want
 ![Set any color you want](ex4.png)
 
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+To use the basic state just pass the required params:
 
 ```dart
-const like = 'sample';
+ProgressCircle(
+    boxSize: 300,
+    completed: 7,
+    total: 8,
+),
 ```
 
-## Additional information
+You may round the head or tail:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart
+ProgressCircle(
+    boxSize: 300,
+    completed: 7,
+    total: 8,
+    isRoundedHead: true,
+    isRoundedTail: true,
+),
+```
+
+If you want to set some icon:
+
+```dart
+ProgressCircle(
+    boxSize: 300,
+    completed: 7,
+    total: 8,
+    headIcon: Icons.star,
+    tailIcon: Icons.star_border,
+    headIconColor: Colors.white,
+    tailIconColor: Colors.black,
+),
+```
+
+Set your message to the center:
+
+```dart
+ProgressCircle(
+    boxSize: 300,
+    completed: 7,
+    total: 8,
+    centerMessage: 'You are beautiful!',
+    centerMessageStyle: TextStyle(
+        color: Colors.blue,
+        fontSize: 14,
+    ),
+),
+```
+
+Play with arc with and change the color:
+
+```dart
+ProgressCircle(
+    boxSize: 300,
+    completed: 7,
+    total: 8,
+    arcWidth: 45,
+    progressArcColor: Colors.orange,
+    innerColor: Colors.redAccent,
+),
+```
