@@ -1,22 +1,17 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+The package provides a beautiful and simple to use widget that renders
+a circle with its progress arc. You might need it to show your users 
+some progress or activity in your app.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+The widget is quite simple in useand customizable
+so you may play with it to choose the appropriate configuration.
+Here are some basic states which you can combine to get the necessary customization:
+
+![Round your arc's head or tail](ex1.png)
+![Set any icon to any part](ex2.png)
+![Set some message and change the width](ex3.png)
+![Set any color you want](ex4.png)
 
 ## Getting started
 
