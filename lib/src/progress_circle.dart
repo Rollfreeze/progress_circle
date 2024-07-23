@@ -75,6 +75,27 @@ class ProgressCircle extends StatelessWidget {
     this.arcColor = const Color(0XFFEFEFF4),
   });
 
+  /// ProgressCircle with both rounded head and tail.
+  const ProgressCircle.rounded({
+    super.key,
+    required this.boxSize,
+    required this.total,
+    required this.completed,
+    this.progressArcColor = Colors.blue,
+    this.arcWidth = 35,
+    this.headIcon,
+    this.headIconSize = 15.0,
+    this.headIconColor = Colors.white,
+    this.tailIcon,
+    this.tailIconSize = 15.0,
+    this.tailIconColor = Colors.white,
+    this.centerMessage,
+    this.centerMessageStyle,
+    this.innerColor = Colors.white,
+    this.arcColor = const Color(0XFFEFEFF4),
+  })  : isRoundedHead = true,
+        isRoundedTail = true;
+
   @override
   Widget build(BuildContext context) {
     return Center(
