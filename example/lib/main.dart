@@ -14,90 +14,87 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: _bgColor,
         body: SafeArea(
           child: Padding(
-            padding: EdgeInsets.all(_indent),
-            // child: Column(
-            //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-            //   children: [
-            //     const ProgressCircle.rounded(
-            //       boxSize: _boxSize,
-            //       completed: 1,
-            //       total: 4,
-            //       innerColor: _bgColor,
-            //     ),
-            //     ProgressCircle.rounded(
-            //       boxSize: _boxSize,
-            //       completed: 2,
-            //       total: 4,
-            //       headIcon: Icons.star,
-            //       tailIcon: Icons.apple,
-            //       progressArcColor: Colors.orange,
-            //       innerColor: Colors.orange.shade100,
-            //       centerMessage: '50 %',
-            //     ),
-            //     const ProgressCircle.rounded(
-            //       boxSize: _boxSize,
-            //       completed: 5,
-            //       total: 6,
-            //       centerMessage: '5 / 6',
-            //       innerColor: _bgColor,
-            //       progressArcColor: Colors.pinkAccent,
-            //       headIcon: Icons.star,
-            //       tailIcon: Icons.apple,
-            //     ),
-            //   ],
-            // ),
-            // child: Column(
-            //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-            //   children: [
-            //     ProgressCircle.rounded(
-            //       boxSize: _boxSize,
-            //       completed: 4,
-            //       total: 4,
-            //       innerColor: Colors.green.shade600,
-            //       progressArcColor: Colors.green.shade900,
-            //     ),
-            //     ProgressCircle.rounded(
-            //       boxSize: _boxSize,
-            //       completed: 4,
-            //       total: 4,
-            //       headIcon: Icons.star,
-            //       tailIcon: Icons.apple,
-            //       innerColor: Colors.orange.shade100,
-            //       progressArcColor: Colors.orange.shade600,
-            //     ),
-            //     ProgressCircle.rounded(
-            //       boxSize: _boxSize,
-            //       completed: 4,
-            //       total: 4,
-            //       innerColor: Colors.red.shade900,
-            //       progressArcColor: Colors.red,
-            //       headIcon: Icons.star,
-            //       tailIcon: Icons.apple,
-            //     ),
-            //   ],
-            // ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+            padding: const EdgeInsets.all(_indent),
+            child: ListView(
               children: [
+                const ProgressCircle.rounded(
+                  boxSize: _boxSize,
+                  completed: 1,
+                  total: 4,
+                  innerColor: _bgColor,
+                ),
+                const SizedBox(height: 20),
                 ProgressCircle.rounded(
+                  boxSize: _boxSize,
+                  completed: 2,
+                  total: 4,
+                  headIcon: Icons.star,
+                  tailIcon: Icons.apple,
+                  progressArcColor: Colors.orange,
+                  innerColor: Colors.orange.shade100,
+                  centerMessage: '50 %',
+                ),
+                const SizedBox(height: 20),
+                const ProgressCircle.rounded(
+                  boxSize: _boxSize,
+                  completed: 5,
+                  total: 6,
+                  centerMessage: '5 / 6',
+                  innerColor: _bgColor,
+                  progressArcColor: Colors.pinkAccent,
+                  headIcon: Icons.star,
+                  tailIcon: Icons.apple,
+                ),
+                const SizedBox(height: 20),
+                ProgressCircle.rounded(
+                  boxSize: _boxSize,
+                  completed: 4,
+                  total: 4,
+                  innerColor: Colors.green.shade600,
+                  progressArcColor: Colors.green.shade900,
+                ),
+                const SizedBox(height: 20),
+                ProgressCircle.rounded(
+                  boxSize: _boxSize,
+                  completed: 4,
+                  total: 4,
+                  headIcon: Icons.star,
+                  tailIcon: Icons.apple,
+                  innerColor: Colors.orange.shade100,
+                  progressArcColor: Colors.orange.shade600,
+                ),
+                const SizedBox(height: 20),
+                ProgressCircle.rounded(
+                  boxSize: _boxSize,
+                  completed: 4,
+                  total: 4,
+                  innerColor: Colors.red.shade900,
+                  progressArcColor: Colors.red,
+                  headIcon: Icons.star,
+                  tailIcon: Icons.apple,
+                ),
+                const SizedBox(height: 20),
+                const ProgressCircle.rounded(
                   boxSize: _boxSize,
                   completed: 6,
                   total: 8,
                   arcWidth: 15,
                 ),
-                ProgressCircle(
+                const SizedBox(height: 20),
+                const ProgressCircle(
                   boxSize: _boxSize,
                   completed: 2,
                   total: 4,
                   arcWidth: 30,
                 ),
-                ProgressCircle(
+                const SizedBox(height: 20),
+                const ProgressCircle(
                   boxSize: _boxSize,
                   completed: 3,
                   total: 8,
