@@ -40,7 +40,7 @@ ProgressCircle(
     isRoundedTail: true,
 ),
 
-// or
+// Or use this constructor.
 ProgressCircle.rounded(
     boxSize: 300,
     completed: 7,
