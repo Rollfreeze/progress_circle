@@ -14,44 +14,44 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: _bgColor,
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(_indent),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                const ProgressCircle.rounded(
-                  boxSize: _boxSize,
-                  completed: 1,
-                  total: 4,
-                  innerColor: _bgColor,
-                ),
-                ProgressCircle.rounded(
-                  boxSize: _boxSize,
-                  completed: 2,
-                  total: 4,
-                  headIcon: Icons.star,
-                  tailIcon: Icons.apple,
-                  progressArcColor: Colors.orange,
-                  innerColor: Colors.orange.shade100,
-                  centerMessage: '50 %',
-                ),
-                const ProgressCircle.rounded(
-                  boxSize: _boxSize,
-                  completed: 5,
-                  total: 6,
-                  centerMessage: '5 / 6',
-                  innerColor: _bgColor,
-                  progressArcColor: Colors.pinkAccent,
-                  headIcon: Icons.star,
-                  tailIcon: Icons.apple,
-                ),
-              ],
-            ),
+            padding: EdgeInsets.all(_indent),
+            // child: Column(
+            //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //   children: [
+            //     const ProgressCircle.rounded(
+            //       boxSize: _boxSize,
+            //       completed: 1,
+            //       total: 4,
+            //       innerColor: _bgColor,
+            //     ),
+            //     ProgressCircle.rounded(
+            //       boxSize: _boxSize,
+            //       completed: 2,
+            //       total: 4,
+            //       headIcon: Icons.star,
+            //       tailIcon: Icons.apple,
+            //       progressArcColor: Colors.orange,
+            //       innerColor: Colors.orange.shade100,
+            //       centerMessage: '50 %',
+            //     ),
+            //     const ProgressCircle.rounded(
+            //       boxSize: _boxSize,
+            //       completed: 5,
+            //       total: 6,
+            //       centerMessage: '5 / 6',
+            //       innerColor: _bgColor,
+            //       progressArcColor: Colors.pinkAccent,
+            //       headIcon: Icons.star,
+            //       tailIcon: Icons.apple,
+            //     ),
+            //   ],
+            // ),
             // child: Column(
             //   mainAxisAlignment: MainAxisAlignment.spaceAround,
             //   children: [
@@ -82,29 +82,30 @@ class MainApp extends StatelessWidget {
             //     ),
             //   ],
             // ),
-            // child: const Column(
-            //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-            //   children: [
-            //     ProgressCircle.rounded(
-            //       boxSize: _boxSize,
-            //       completed: 4,
-            //       total: 4,
-            //       arcWidth: 20,
-            //     ),
-            //     ProgressCircle.rounded(
-            //       boxSize: _boxSize,
-            //       completed: 4,
-            //       total: 4,
-            //       arcWidth: 40,
-            //     ),
-            //     ProgressCircle.rounded(
-            //       boxSize: _boxSize,
-            //       completed: 4,
-            //       total: 4,
-            //       arcWidth: 60,
-            //     ),
-            //   ],
-            // ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                ProgressCircle.rounded(
+                  boxSize: _boxSize,
+                  completed: 6,
+                  total: 8,
+                  arcWidth: 15,
+                ),
+                ProgressCircle(
+                  boxSize: _boxSize,
+                  completed: 2,
+                  total: 4,
+                  arcWidth: 30,
+                ),
+                ProgressCircle(
+                  boxSize: _boxSize,
+                  completed: 3,
+                  total: 8,
+                  arcWidth: 60,
+                  isRoundedHead: true,
+                ),
+              ],
+            ),
           ),
         ),
       ),
