@@ -56,9 +56,9 @@ class ProgressCirclePainter extends CustomPainter {
   final Color arcColor;
 
   const ProgressCirclePainter({
-    this.total = 0,
-    this.completed = 0,
-    this.completedPercent,
+    required this.total,
+    required this.completed,
+    required this.completedPercent,
     required this.progressArcColor,
     required this.arcWidth,
     required this.isRoundedHead,
