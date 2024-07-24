@@ -23,14 +23,14 @@ class MainApp extends StatelessWidget {
             padding: const EdgeInsets.all(_indent),
             child: ListView(
               children: [
-                const ProgressCircle.rounded(
+                const ProgressCircle.fromValues(
                   boxSize: _boxSize,
                   completed: 1,
                   total: 4,
                   innerColor: _bgColor,
                 ),
                 const SizedBox(height: 20),
-                ProgressCircle.rounded(
+                ProgressCircle.fromValues(
                   boxSize: _boxSize,
                   completed: 2,
                   total: 4,
@@ -41,7 +41,7 @@ class MainApp extends StatelessWidget {
                   centerMessage: '50 %',
                 ),
                 const SizedBox(height: 20),
-                const ProgressCircle.rounded(
+                const ProgressCircle.fromValues(
                   boxSize: _boxSize,
                   completed: 5,
                   total: 6,
@@ -52,7 +52,7 @@ class MainApp extends StatelessWidget {
                   tailIcon: Icons.apple,
                 ),
                 const SizedBox(height: 20),
-                ProgressCircle.rounded(
+                ProgressCircle.fromValues(
                   boxSize: _boxSize,
                   completed: 4,
                   total: 4,
@@ -60,7 +60,7 @@ class MainApp extends StatelessWidget {
                   progressArcColor: Colors.green.shade900,
                 ),
                 const SizedBox(height: 20),
-                ProgressCircle.rounded(
+                ProgressCircle.fromValues(
                   boxSize: _boxSize,
                   completed: 4,
                   total: 4,
@@ -70,7 +70,7 @@ class MainApp extends StatelessWidget {
                   progressArcColor: Colors.orange.shade600,
                 ),
                 const SizedBox(height: 20),
-                ProgressCircle.rounded(
+                ProgressCircle.fromValues(
                   boxSize: _boxSize,
                   completed: 4,
                   total: 4,
@@ -80,26 +80,35 @@ class MainApp extends StatelessWidget {
                   tailIcon: Icons.apple,
                 ),
                 const SizedBox(height: 20),
-                const ProgressCircle.rounded(
+                const ProgressCircle.fromValues(
                   boxSize: _boxSize,
                   completed: 6,
                   total: 8,
                   arcWidth: 15,
                 ),
                 const SizedBox(height: 20),
-                const ProgressCircle(
+                const ProgressCircle.fromValues(
                   boxSize: _boxSize,
                   completed: 2,
                   total: 4,
                   arcWidth: 30,
                 ),
                 const SizedBox(height: 20),
-                const ProgressCircle(
+                const ProgressCircle.fromValues(
                   boxSize: _boxSize,
                   completed: 3,
                   total: 8,
                   arcWidth: 60,
-                  isRoundedHead: true,
+                ),
+                const SizedBox(height: 20),
+                const ProgressCircle.fromPercent(
+                  boxSize: _boxSize,
+                  completedPercent: 0,
+                ),
+                const ProgressCircle.fromValues(
+                  boxSize: _boxSize,
+                  completed: 5,
+                  total: 10,
                 ),
               ],
             ),

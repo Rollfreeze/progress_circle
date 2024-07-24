@@ -5,16 +5,19 @@ import 'package:flutter/material.dart';
 /// A Painter for drawing a circle with its progress curve.
 class ProgressCirclePainter extends CustomPainter {
   /// Total value.
-  final int total;
+  final double total;
 
   /// Completed value.
-  final int completed;
+  final double completed;
+
+  /// Complete percent e.g. 34.7%.
+  final double? completedPercent;
 
   /// A color of the progress curve.
   final Color progressArcColor;
 
   /// A Circle's arc width.
-  final int arcWidth;
+  final double arcWidth;
 
   /// Should the head of the curve line be rounded.
   final bool isRoundedHead;
@@ -53,8 +56,9 @@ class ProgressCirclePainter extends CustomPainter {
   final Color arcColor;
 
   const ProgressCirclePainter({
-    required this.total,
-    required this.completed,
+    this.total = 0,
+    this.completed = 0,
+    this.completedPercent,
     required this.progressArcColor,
     required this.arcWidth,
     required this.isRoundedHead,
@@ -69,12 +73,34 @@ class ProgressCirclePainter extends CustomPainter {
     required this.centerMessageStyle,
     required this.innerColor,
     required this.arcColor,
-  })  : assert(total >= completed, "Total can't be less than completed"),
-        assert(completed >= 0, "Completed can't be less than 0"),
-        assert(total >= 0, "Total can't be less than 0");
+  })  : assert(
+          total >= completed,
+          "Total can't be less than completed",
+        ),
+        assert(
+          completed >= 0.0,
+          "Completed can't be less than 0",
+        ),
+        assert(
+          total >= 0.0,
+          "Total can't be less than 0",
+        ),
+        assert(
+          completedPercent == null || completedPercent >= 0.0,
+          "Completed percent can't be less than 0",
+        );
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+
+  double get _completedPercent => completedPercent ?? completed * 100 / total;
+
+  double get _progressSweepAngle {
+    const oneDegree = pi / 180;
+    final progressCurvePercent = 360 * _completedPercent / 100;
+    final sweepAngle = oneDegree * progressCurvePercent;
+    return sweepAngle;
+  }
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -130,15 +156,6 @@ class ProgressCirclePainter extends CustomPainter {
     );
   }
 
-  double get _completedPercent => completed * 100 / total;
-
-  double get _progressSweepAngle {
-    const oneDegree = pi / 180;
-    final progressCurvePercent = 360 * _completedPercent / 100;
-    final sweepAngle = oneDegree * progressCurvePercent;
-    return sweepAngle;
-  }
-
   /// Progress curve.
   void _drawProgressCurve({
     required Canvas canvas,
@@ -182,7 +199,7 @@ class ProgressCirclePainter extends CustomPainter {
   }) {
     if (!isRoundedHead) return;
 
-    if (completed <= 0) return;
+    if (_completedPercent <= 0) return;
     final headRadius = arcWidth / 2;
     final headPaint = Paint()..color = progressArcColor;
 
@@ -249,7 +266,7 @@ class ProgressCirclePainter extends CustomPainter {
   }) {
     if (!isRoundedTail) return;
 
-    if (completed <= 0) return;
+    if (_completedPercent <= 0) return;
     final headRadius = arcWidth / 2;
     final headPaint = Paint()..color = progressArcColor;
 
