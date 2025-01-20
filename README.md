@@ -64,6 +64,15 @@ ProgressCircle.fromPercent(
 ),
 ```
 
+Wiget size can be changed by the corresponding field:
+
+```dart
+ProgressCircle(
+    completedPercent: 50,
+    size: Size.fromRadius(75),
+),
+```
+
 You may round the head or tail:
 
 ```dart
