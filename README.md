@@ -49,7 +49,7 @@ ProgressCircle(
 ```
 
 So there are some named constructors for your convenience
-that ask only required params for your current case.
+that ask only required params for your current case:
 
 ```dart
 ProgressCircle.fromValues(
