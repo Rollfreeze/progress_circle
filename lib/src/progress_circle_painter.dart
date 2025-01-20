@@ -1,78 +1,16 @@
 import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:progress_circle/src/progress_circle_style.dart';
 
 /// A Painter for drawing a circle with its progress curve.
 class ProgressCirclePainter extends CustomPainter {
-  /// Total value.
-  final double total;
-
-  /// Completed value.
-  final double completed;
-
-  /// Complete percent e.g. 34.7%.
-  final double? completedPercent;
-
-  /// A color of the progress curve.
-  final Color progressArcColor;
-
-  /// A Circle's arc width.
-  final double arcWidth;
-
-  /// Should the head of the curve line be rounded.
-  final bool isRoundedHead;
-
-  /// The head's icon.
-  final IconData? headIcon;
-
-  /// The head's icon size.
-  final double headIconSize;
-
-  /// The head's icon color.
-  final Color headIconColor;
-
-  /// Should the tail of the curve line be rounded.
-  final bool isRoundedTail;
-
-  /// The tail's icon.
-  final IconData? tailIcon;
-
-  /// The tail icon size.
-  final double tailIconSize;
-
-  /// The tails's icon color.
-  final Color tailIconColor;
-
-  /// An optional message in the center.
-  final String? centerMessage;
-
-  /// A text style for the center message.
-  final TextStyle? centerMessageStyle;
-
-  /// A color behind the circle.
-  final Color innerColor;
-
-  /// A color of the circle's arc.
-  final Color arcColor;
-
+  /// Paints ProgressCircle based on the given properties.
   const ProgressCirclePainter({
     required this.total,
     required this.completed,
     required this.completedPercent,
-    required this.progressArcColor,
-    required this.arcWidth,
-    required this.isRoundedHead,
-    required this.headIcon,
-    required this.headIconSize,
-    required this.headIconColor,
-    required this.isRoundedTail,
-    required this.tailIcon,
-    required this.tailIconSize,
-    required this.tailIconColor,
-    required this.centerMessage,
-    required this.centerMessageStyle,
-    required this.innerColor,
-    required this.arcColor,
+    required this.style,
   })  : assert(
           total >= completed,
           "Total can't be less than completed",
@@ -90,6 +28,18 @@ class ProgressCirclePainter extends CustomPainter {
           "Completed percent can't be less than 0",
         );
 
+  /// Total value.
+  final double total;
+
+  /// Completed value.
+  final double completed;
+
+  /// Complete percent e.g. 34.7%.
+  final double? completedPercent;
+
+  /// Style properties for the widget.
+  final ProgressCircleStyle style;
+
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 
@@ -106,11 +56,11 @@ class ProgressCirclePainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     assert(size.height == size.width, "A parent box must be square");
 
-    final innerCirclePaint = Paint()..color = innerColor;
-    final outerCirclePaint = Paint()..color = arcColor;
+    final innerCirclePaint = Paint()..color = style.innerColor;
+    final outerCirclePaint = Paint()..color = style.arcColor;
 
     final outerCircleRadius = size.width / 2;
-    final innerCircleRadius = outerCircleRadius - arcWidth;
+    final innerCircleRadius = outerCircleRadius - style.arcWidth;
 
     final center = Offset(outerCircleRadius, outerCircleRadius);
 
@@ -139,7 +89,7 @@ class ProgressCirclePainter extends CustomPainter {
       size: size,
       dx: center.dx,
       dy: center.dy,
-      centerMessage: centerMessage,
+      centerMessage: style.centerMessage,
       innerRadius: innerCircleRadius * 2,
     );
 
@@ -163,7 +113,7 @@ class ProgressCirclePainter extends CustomPainter {
     required Offset center,
   }) {
     const startAngle = 3 * pi / 2;
-    final curvePaint = Paint()..color = progressArcColor;
+    final curvePaint = Paint()..color = style.progressArcColor;
 
     canvas.drawArc(
       Rect.fromCircle(
@@ -197,11 +147,11 @@ class ProgressCirclePainter extends CustomPainter {
     required Size size,
     required Offset center,
   }) {
-    if (!isRoundedHead) return;
+    if (!style.isRoundedHead) return;
 
     if (_completedPercent <= 0) return;
-    final headRadius = arcWidth / 2;
-    final headPaint = Paint()..color = progressArcColor;
+    final headRadius = style.arcWidth / 2;
+    final headPaint = Paint()..color = style.progressArcColor;
 
     final headPoint = Offset(size.width / 2 - headRadius, 0);
 
@@ -224,13 +174,13 @@ class ProgressCirclePainter extends CustomPainter {
     required Offset headPoint,
     required Canvas canvas,
   }) {
-    if (headIcon == null) return;
+    if (style.headIcon == null) return;
     if (_completedPercent >= 100) return;
 
     canvas.translate(headPoint.dx, headPoint.dy);
     _rotateProgressCounterclockwise(canvas: canvas);
 
-    final iconOffset = -headIconSize / 2;
+    final iconOffset = -style.headIconSize / 2;
     final pictureRecorder = PictureRecorder();
     final iconCanvas = Canvas(pictureRecorder);
 
@@ -239,12 +189,12 @@ class ProgressCirclePainter extends CustomPainter {
     );
 
     iconPainter.text = TextSpan(
-      text: String.fromCharCode(headIcon!.codePoint),
+      text: String.fromCharCode(style.headIcon!.codePoint),
       style: TextStyle(
-        fontFamily: headIcon!.fontFamily,
-        package: headIcon!.fontPackage,
-        fontSize: headIconSize,
-        color: headIconColor,
+        fontFamily: style.headIcon!.fontFamily,
+        package: style.headIcon!.fontPackage,
+        fontSize: style.headIconSize,
+        color: style.headIconColor,
       ),
     );
 
@@ -264,11 +214,11 @@ class ProgressCirclePainter extends CustomPainter {
     required Size size,
     required Offset center,
   }) {
-    if (!isRoundedTail) return;
+    if (!style.isRoundedTail) return;
 
     if (_completedPercent <= 0) return;
-    final headRadius = arcWidth / 2;
-    final headPaint = Paint()..color = progressArcColor;
+    final headRadius = style.arcWidth / 2;
+    final headPaint = Paint()..color = style.progressArcColor;
 
     final headPoint = Offset(size.width / 2, headRadius);
 
@@ -288,10 +238,10 @@ class ProgressCirclePainter extends CustomPainter {
     required Offset headPoint,
     required Canvas canvas,
   }) {
-    if (tailIcon == null) return;
+    if (style.tailIcon == null) return;
     if (_completedPercent <= 0) return;
 
-    final iconOffset = -headIconSize / 2;
+    final iconOffset = -style.headIconSize / 2;
     final pictureRecorder = PictureRecorder();
     final iconCanvas = Canvas(pictureRecorder);
 
@@ -300,12 +250,12 @@ class ProgressCirclePainter extends CustomPainter {
     );
 
     iconPainter.text = TextSpan(
-      text: String.fromCharCode(tailIcon!.codePoint),
+      text: String.fromCharCode(style.tailIcon!.codePoint),
       style: TextStyle(
-        fontFamily: tailIcon!.fontFamily,
-        package: tailIcon!.fontPackage,
-        fontSize: tailIconSize,
-        color: tailIconColor,
+        fontFamily: style.tailIcon!.fontFamily,
+        package: style.tailIcon!.fontPackage,
+        fontSize: style.tailIconSize,
+        color: style.tailIconColor,
       ),
     );
 
@@ -332,7 +282,7 @@ class ProgressCirclePainter extends CustomPainter {
 
     final textSpan = TextSpan(
       text: centerMessage,
-      style: centerMessageStyle ??
+      style: style.centerMessageStyle ??
           const TextStyle(
             color: Colors.black,
             fontSize: 14,
