@@ -7,7 +7,7 @@ class ProgressCircle extends StatelessWidget {
   /// Creates a default ProgressCircle.
   const ProgressCircle({
     super.key,
-    this.total = 0,
+    this.total = 1,
     this.completed = 0,
     this.completedPercent,
     this.size = const Size.fromRadius(100),
