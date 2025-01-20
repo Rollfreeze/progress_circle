@@ -60,7 +60,7 @@ ProgressCircle.fromValues(
 
 ```dart
 ProgressCircle.fromPercent(
-    completedPercent: 50,
+    completedPercent: 50.0,
 ),
 ```
 
