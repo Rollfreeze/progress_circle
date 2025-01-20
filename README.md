@@ -36,9 +36,9 @@ ProgressCircle(
 ),
 ```
 
-If both groups are set,
+If both groups are set
 then value `completedPercent` will be selected
-while `completed` and `total` will be ignored:
+while others will be ignored:
 
 ```dart
 ProgressCircle(
