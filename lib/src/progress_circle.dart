@@ -39,6 +39,10 @@ class ProgressCircle extends StatelessWidget {
   final double completed;
 
   /// Complete percent e.g. 34.7%.
+  ///
+  /// Accepts any positive number
+  /// such as 0.84, 13.4, 50.0, 100.0, 113.6 etc
+  /// to layout the progress.
   final double? completedPercent;
 
   /// Size of the widget.
