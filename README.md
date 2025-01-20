@@ -73,63 +73,23 @@ ProgressCircle(
 ),
 ```
 
-You may round the head or tail:
+There is a style property so it's customizable:
 
 ```dart
 ProgressCircle(
-    boxSize: 300,
-    completed: 7,
-    total: 8,
-    isRoundedHead: true,
-    isRoundedTail: true,
-),
-
-// Or use this constructor.
-ProgressCircle.rounded(
-    boxSize: 300,
-    completed: 7,
-    total: 8,
-),
-```
-
-If you want to set some icon:
-
-```dart
-ProgressCircle(
-    boxSize: 300,
-    completed: 7,
-    total: 8,
-    headIcon: Icons.star,
-    tailIcon: Icons.star_border,
-    headIconColor: Colors.white,
-    tailIconColor: Colors.black,
-),
-```
-
-Set your message to the center:
-
-```dart
-ProgressCircle(
-    boxSize: 300,
-    completed: 7,
-    total: 8,
-    centerMessage: 'You are beautiful!',
-    centerMessageStyle: TextStyle(
-        color: Colors.blue,
-        fontSize: 14,
+    completedPercent: 50,
+    style: ProgressCircleStyle(
+        progressArcColor: Colors.orange,
+        headIcon: Icons.star,
+        tailIcon: Icons.apple,
+        centerMessage: 'You are beautiful!',
+        centerMessageStyle: TextStyle(
+            color: Colors.orange,
+            fontSize: 14,
+        ),
     ),
 ),
 ```
 
-Play with arc with and change the color:
-
-```dart
-ProgressCircle(
-    boxSize: 300,
-    completed: 7,
-    total: 8,
-    arcWidth: 45,
-    progressArcColor: Colors.orange,
-    innerColor: Colors.redAccent,
-),
-```
+There are also other properties for customization inside style,
+so you may play with it to set the appropriate configuration.
