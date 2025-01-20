@@ -23,8 +23,8 @@ To use the basic state just pass the required params:
 
 ```dart
 ProgressCircle(
-    completed: 4,
-    total: 8,
+    completed: 4.0,
+    total: 8.0,
 ),
 ```
 
@@ -32,7 +32,7 @@ It's possible to create the same state as above from percent value:
 
 ```dart
 ProgressCircle(
-    completedPercent: 50,
+    completedPercent: 50.0,
 ),
 ```
 
@@ -42,9 +42,9 @@ while `completed` and `total` will be ignored:
 
 ```dart
 ProgressCircle(
-    completed: 2, // ignored
-    total: 8, // ignored
-    completedPercent: 50, // selected
+    completed: 2.0, // ignored
+    total: 8.0, // ignored
+    completedPercent: 50.0, // selected
 ),
 ```
 
@@ -53,8 +53,8 @@ that ask only required params for your current case.
 
 ```dart
 ProgressCircle.fromValues(
-    total: 4,
-    completed: 8,
+    total: 4.0,
+    completed: 8.0,
 ),
 ```
 
