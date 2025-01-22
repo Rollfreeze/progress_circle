@@ -8,8 +8,8 @@ The widget is quite simple in use and customizable
 so you may play with it to choose the appropriate configuration.
 Here are some basic states which you can combine to get the necessary customization:
 
-## Use any icon for each of the side
-![Here's an example of basic states you can do](example.png)
+## Here's an example of basic states you can do
+![UI Example](example.png)
 
 ## Usage
 
