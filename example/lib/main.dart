@@ -17,102 +17,96 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: _bgColor,
         body: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              spacing: 20,
+          child: Center(
+            child: Wrap(
+              spacing: 100.0,
+              runSpacing: 50.0,
               children: [
-                const ProgressCircle(
-                  completed: 2,
-                  total: 4,
-                  completedPercent: 16,
+                const ProgressCircle(total: 100, completed: 35), // by values
+                const ProgressCircle(total: 100, completed: 70), // by values
+                const ProgressCircle(completedPercent: 85), // by percent
+
+                /// fromPercent
+                const ProgressCircle.fromPercent(
+                  completedPercent: 35,
                   style: ProgressCircleStyle(
-                    innerColor: _bgColor,
-                  ),
-                ),
-                const ProgressCircle.fromValues(
-                  completed: 1,
-                  total: 4,
-                  style: ProgressCircleStyle(
-                    innerColor: _bgColor,
-                  ),
-                ),
-                ProgressCircle.fromValues(
-                  completed: 2,
-                  total: 4,
-                  style: ProgressCircleStyle(
-                    headIcon: Icons.star,
-                    tailIcon: Icons.apple,
-                    progressArcColor: Colors.orange,
-                    innerColor: Colors.orange.shade100,
-                    centerMessage: '50 %',
-                  ),
-                ),
-                const ProgressCircle.fromValues(
-                  completed: 5,
-                  total: 6,
-                  style: ProgressCircleStyle(
-                    centerMessage: '5 / 6',
-                    innerColor: _bgColor,
-                    progressArcColor: Colors.pinkAccent,
-                    headIcon: Icons.star,
-                    tailIcon: Icons.apple,
-                  ),
-                ),
-                ProgressCircle.fromValues(
-                  completed: 4,
-                  total: 4,
-                  style: ProgressCircleStyle(
-                    innerColor: Colors.green.shade600,
-                    progressArcColor: Colors.green.shade900,
-                  ),
-                ),
-                ProgressCircle.fromValues(
-                  completed: 4,
-                  total: 4,
-                  style: ProgressCircleStyle(
-                    headIcon: Icons.star,
-                    tailIcon: Icons.apple,
-                    innerColor: Colors.orange.shade100,
-                    progressArcColor: Colors.orange.shade600,
-                  ),
-                ),
-                ProgressCircle.fromValues(
-                  completed: 4,
-                  total: 4,
-                  style: ProgressCircleStyle(
-                    innerColor: Colors.red.shade900,
-                    progressArcColor: Colors.red,
-                    headIcon: Icons.star,
-                    tailIcon: Icons.apple,
-                  ),
-                ),
-                const ProgressCircle.fromValues(
-                  completed: 6,
-                  total: 8,
-                  style: ProgressCircleStyle(
-                    arcWidth: 15,
-                  ),
-                ),
-                const ProgressCircle.fromValues(
-                  completed: 2,
-                  total: 4,
-                  style: ProgressCircleStyle(
-                    arcWidth: 30,
-                  ),
-                ),
-                const ProgressCircle.fromValues(
-                  completed: 3,
-                  total: 8,
-                  style: ProgressCircleStyle(
-                    arcWidth: 60,
+                    headIcon: Icons.apple,
+                    arcWidth: 20,
                   ),
                 ),
                 const ProgressCircle.fromPercent(
-                  completedPercent: 0,
+                  completedPercent: 70,
+                  style: ProgressCircleStyle(
+                    tailIcon: Icons.star,
+                    arcWidth: 30,
+                  ),
+                ),
+                const ProgressCircle.fromPercent(
+                  completedPercent: 85,
+                  style: ProgressCircleStyle(
+                    headIcon: Icons.apple,
+                    tailIcon: Icons.star,
+                    arcWidth: 50,
+                  ),
+                ),
+
+                /// fromValues
+                const ProgressCircle.fromValues(
+                  total: 100,
+                  completed: 35,
+                  style: ProgressCircleStyle(
+                    progressArcColor: Colors.orange,
+                    headIcon: Icons.apple,
+                  ),
                 ),
                 const ProgressCircle.fromValues(
-                  completed: 5,
-                  total: 10,
+                  total: 100,
+                  completed: 70,
+                  style: ProgressCircleStyle(
+                    progressArcColor: Colors.green,
+                    tailIcon: Icons.star,
+                  ),
+                ),
+
+                const ProgressCircle.fromValues(
+                  total: 100,
+                  completed: 85,
+                  style: ProgressCircleStyle(
+                    progressArcColor: Colors.purple,
+                    headIcon: Icons.apple,
+                    tailIcon: Icons.star,
+                  ),
+                ),
+
+                /// Some more style
+                ProgressCircle.fromValues(
+                  total: 100,
+                  completed: 35,
+                  style: ProgressCircleStyle(
+                    progressArcColor: Colors.orange,
+                    arcColor: Colors.orange.shade100,
+                    headIcon: Icons.apple,
+                  ),
+                ),
+                ProgressCircle.fromValues(
+                  total: 100,
+                  completed: 70,
+                  style: ProgressCircleStyle(
+                    progressArcColor: Colors.green,
+                    arcColor: Colors.green.shade100,
+                    tailIcon: Icons.star,
+                  ),
+                ),
+
+                ProgressCircle.fromValues(
+                  total: 100,
+                  completed: 85,
+                  style: ProgressCircleStyle(
+                    progressArcColor: Colors.purple,
+                    arcColor: Colors.purple.shade100,
+                    headIcon: Icons.apple,
+                    tailIcon: Icons.star,
+                  ),
                 ),
               ],
             ),
