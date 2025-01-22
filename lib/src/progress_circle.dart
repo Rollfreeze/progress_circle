@@ -53,15 +53,13 @@ class ProgressCircle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: CustomPaint(
-        size: size,
-        painter: ProgressCirclePainter(
-          total: total,
-          completed: completed,
-          completedPercent: completedPercent,
-          style: style,
-        ),
+    return CustomPaint(
+      size: size,
+      painter: ProgressCirclePainter(
+        total: total,
+        completed: completed,
+        completedPercent: completedPercent,
+        style: style,
       ),
     );
   }
