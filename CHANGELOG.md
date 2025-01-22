@@ -8,4 +8,3 @@
 * **BREAKING CHANGE**: all previous styling properties have been encapsulated into the `style` field (`ProgressCircleStyle`).
 * `size` property changed to non required with default value
 * update documentation
-
