@@ -9,13 +9,7 @@ so you may play with it to choose the appropriate configuration.
 Here are some basic states which you can combine to get the necessary customization:
 
 ## Use any icon for each of the side
-![Round your arc's head or tail](ex1.png)
-
-## Set any color you want
-![Set any icon to any part](ex2.png)
-
-## Change the width
-![Set some message and change the width](ex3.png)
+![Here's an example of basic states you can do](example.png)
 
 ## Usage
 
