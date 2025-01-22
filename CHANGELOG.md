@@ -1,3 +1,7 @@
+## 1.0.1
+
+* update documentation
+
 ## 1.0.0
 
 * Added `ProgressCircleStyle` calss for styling the widget
