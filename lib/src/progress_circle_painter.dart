@@ -41,7 +41,7 @@ class ProgressCirclePainter extends CustomPainter {
   final ProgressCircleStyle style;
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
 
   double get _completedPercent => completedPercent ?? completed * 100 / total;
 
