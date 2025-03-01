@@ -1,3 +1,7 @@
+## 1.0.2
+
+* Fixed shouldRepaint. So it's now possible to update ProgressCircle's state on UI
+
 ## 1.0.1
 
 * update documentation
