@@ -85,5 +85,18 @@ ProgressCircle(
 ),
 ```
 
+It's also possible to configurate how you want to show zero progress,
+so if you want to have a rounded head at zero point when progress is zero,
+then just set this property:
+
+```dart
+ProgressCircle(
+    completedPercent: 0, // or use `total` with `completed`
+    style: ProgressCircleStyle(
+        showZeroProgress: true,
+    ),
+),
+```
+
 There are also other properties for customization inside style,
 so you may play with it to set the appropriate configuration.
