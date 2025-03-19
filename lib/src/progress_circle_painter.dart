@@ -152,7 +152,7 @@ class ProgressCirclePainter extends CustomPainter {
   }) {
     if (!style.isRoundedHead) return;
 
-    if (_completedPercent <= 0) return;
+    if (!style.showZeroProgress && _completedPercent <= 0) return;
     final headRadius = style.arcWidth / 2;
     final headPaint = Paint()..color = style.progressArcColor;
 
