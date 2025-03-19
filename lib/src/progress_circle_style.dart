@@ -18,6 +18,7 @@ class ProgressCircleStyle {
     this.centerMessageStyle,
     this.innerColor = Colors.white,
     this.arcColor = const Color(0XFFEFEFF4),
+    this.showZeroProgress = false,
   });
 
   /// A color of the progress curve.
@@ -61,4 +62,7 @@ class ProgressCircleStyle {
 
   /// A color of the circle's arc.
   final Color arcColor;
+
+  /// Draws a head with zero progress when it's true.
+  final bool showZeroProgress;
 }
