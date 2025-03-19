@@ -43,7 +43,10 @@ class ProgressCirclePainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
 
-  double get _completedPercent => completedPercent ?? completed * 100 / total;
+  double get _completedPercent {
+    if (completedPercent == null && total <= 0) return 0;
+    return completedPercent ?? completed * 100 / total;
+  }
 
   double get _progressSweepAngle {
     const oneDegree = pi / 180;
