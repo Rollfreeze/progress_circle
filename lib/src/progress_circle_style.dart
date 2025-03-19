@@ -64,5 +64,7 @@ class ProgressCircleStyle {
   final Color arcColor;
 
   /// Draws a head with zero progress when it's true.
+  ///
+  /// It has effect when the circle has a rounded style progress curve.
   final bool showZeroProgress;
 }
