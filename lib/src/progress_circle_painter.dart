@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'dart:ui';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:progress_circle/src/progress_circle_style.dart';
 
@@ -39,6 +40,8 @@ class ProgressCirclePainter extends CustomPainter {
 
   /// Style properties for the widget.
   final ProgressCircleStyle style;
+
+  static const _cupertinoIconsAlignOffset = 2.0;
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
@@ -183,6 +186,8 @@ class ProgressCirclePainter extends CustomPainter {
     canvas.translate(headPoint.dx, headPoint.dy);
     _rotateProgressCounterclockwise(canvas: canvas);
 
+    bool isCupertino = style.headIcon!.fontFamily == CupertinoIcons.iconFont;
+
     final iconOffset = -style.headIconSize / 2;
     final pictureRecorder = PictureRecorder();
     final iconCanvas = Canvas(pictureRecorder);
@@ -202,10 +207,18 @@ class ProgressCirclePainter extends CustomPainter {
     );
 
     iconPainter.layout();
-    iconPainter.paint(
-      iconCanvas,
-      Offset(iconOffset, iconOffset),
-    );
+
+    if (isCupertino) {
+      iconPainter.paint(
+        iconCanvas,
+        Offset(iconOffset + _cupertinoIconsAlignOffset, iconOffset - _cupertinoIconsAlignOffset),
+      );
+    } else {
+      iconPainter.paint(
+        iconCanvas,
+        Offset(iconOffset, iconOffset),
+      );
+    }
 
     final picture = pictureRecorder.endRecording();
     canvas.drawPicture(picture);
@@ -244,6 +257,8 @@ class ProgressCirclePainter extends CustomPainter {
     if (style.tailIcon == null) return;
     if (_completedPercent <= 0) return;
 
+    bool isCupertino = style.headIcon!.fontFamily == CupertinoIcons.iconFont;
+
     final iconOffset = -style.headIconSize / 2;
     final pictureRecorder = PictureRecorder();
     final iconCanvas = Canvas(pictureRecorder);
@@ -263,10 +278,18 @@ class ProgressCirclePainter extends CustomPainter {
     );
 
     iconPainter.layout();
-    iconPainter.paint(
-      iconCanvas,
-      Offset(headPoint.dx + iconOffset, headPoint.dy + iconOffset),
-    );
+
+    if (isCupertino) {
+      iconPainter.paint(
+        iconCanvas,
+        Offset(headPoint.dx + iconOffset + _cupertinoIconsAlignOffset, headPoint.dy + iconOffset - _cupertinoIconsAlignOffset),
+      );
+    } else {
+      iconPainter.paint(
+        iconCanvas,
+        Offset(headPoint.dx + iconOffset, headPoint.dy + iconOffset),
+      );
+    }
 
     final picture = pictureRecorder.endRecording();
     canvas.drawPicture(picture);
