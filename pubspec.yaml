@@ -1,6 +1,6 @@
 name: progress_circle
 description: ProgressCircle is an easy widget to use for creating some circle progress tracker.
-version: 1.1.1
+version: 1.2.0
 homepage: https://github.com/Rollfreeze/progress_circle
 
 environment:
