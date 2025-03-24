@@ -1,3 +1,7 @@
+## 1.2.0
+
+* Added `useHeadIconRotation` property to rotate head icon with progress scale
+
 ## 1.1.1
 
 * Fixed cupertino icons' alignment
