@@ -197,7 +197,7 @@ class ProgressCirclePainter extends CustomPainter {
 
     canvas.translate(headPoint.dx, headPoint.dy);
 
-    if (style.isHeadIconFollowAngle) {
+    if (style.useHeadIconRotation) {
       _rotateHeadIconWithProgressAngle(canvas: canvas);
     } else {
       _rotateProgressCounterclockwise(canvas: canvas);

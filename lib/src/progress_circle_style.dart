@@ -10,7 +10,7 @@ class ProgressCircleStyle {
     this.headIcon,
     this.headIconSize = 15.0,
     this.headIconColor = Colors.white,
-    this.isHeadIconFollowAngle = false,
+    this.useHeadIconRotation = false,
     this.isRoundedTail = true,
     this.tailIcon,
     this.tailIconSize = 15.0,
@@ -41,7 +41,7 @@ class ProgressCircleStyle {
   final Color headIconColor;
 
   /// Whether the head icon follow with the progress angle.
-  final bool isHeadIconFollowAngle;
+  final bool useHeadIconRotation;
 
   /// Should the tail of the curve line be rounded.
   final bool isRoundedTail;
