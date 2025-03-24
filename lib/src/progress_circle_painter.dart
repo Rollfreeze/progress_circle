@@ -147,6 +147,18 @@ class ProgressCirclePainter extends CustomPainter {
     canvas.rotate(pi / 2);
   }
 
+  void _rotateHeadIconWithProgressAngle({
+    required Canvas canvas,
+  }) {
+    const defaultRotation = pi / 2;
+    const degreeToRadian = pi / 180;
+    const rotationPerPercent = 3.6 * degreeToRadian;
+    final progressFraction = _completedPercent / 100;
+
+    final progressRotation = progressFraction * rotationPerPercent;
+    canvas.rotate(defaultRotation + progressRotation);
+  }
+
   /// Draws a progress curve rounded head.
   void _maybeDrawProgressHead({
     required Canvas canvas,
@@ -184,7 +196,12 @@ class ProgressCirclePainter extends CustomPainter {
     if (_completedPercent >= 100) return;
 
     canvas.translate(headPoint.dx, headPoint.dy);
-    _rotateProgressCounterclockwise(canvas: canvas);
+
+    if (style.isHeadIconFollowAngle) {
+      _rotateHeadIconWithProgressAngle(canvas: canvas);
+    } else {
+      _rotateProgressCounterclockwise(canvas: canvas);
+    }
 
     bool isCupertino = style.headIcon!.fontFamily == CupertinoIcons.iconFont;
 
