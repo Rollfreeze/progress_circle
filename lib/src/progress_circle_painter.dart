@@ -221,7 +221,6 @@ class ProgressCirclePainter extends CustomPainter {
     required Canvas canvas,
   }) {
     if (style.headIcon == null) return;
-    if (_completedPercent >= 100) return;
 
     canvas.translate(headPoint.dx, headPoint.dy);
 
