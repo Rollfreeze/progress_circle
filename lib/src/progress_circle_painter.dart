@@ -62,11 +62,9 @@ class ProgressCirclePainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     assert(size.height == size.width, "A parent box must be square");
 
-    final innerCirclePaint = Paint()..color = style.innerColor;
     final outerCirclePaint = Paint()..color = style.arcColor;
 
     final outerCircleRadius = size.width / 2;
-    final innerCircleRadius = outerCircleRadius - style.arcWidth;
 
     final center = Offset(outerCircleRadius, outerCircleRadius);
 
@@ -81,22 +79,6 @@ class ProgressCirclePainter extends CustomPainter {
       canvas: canvas,
       size: size,
       center: center,
-    );
-
-    /// Inner circle.
-    canvas.drawCircle(
-      center,
-      innerCircleRadius,
-      innerCirclePaint,
-    );
-
-    _maybeDrawText(
-      canvas: canvas,
-      size: size,
-      dx: center.dx,
-      dy: center.dy,
-      centerMessage: style.centerMessage,
-      innerRadius: innerCircleRadius * 2,
     );
 
     _maybeDrawProgressTail(
@@ -176,11 +158,13 @@ class ProgressCirclePainter extends CustomPainter {
     canvas.translate(center.dx, center.dy);
     _rotateProgressClockwise(canvas: canvas);
 
-    _drawHeadShadow(
-      headPoint: headPoint,
-      headRadius: headRadius,
-      canvas: canvas,
-    );
+    if (_completedPercent >= 100) {
+      _drawHeadShadow(
+        headPoint: headPoint,
+        headRadius: headRadius,
+        canvas: canvas,
+      );
+    }
 
     canvas.drawCircle(
       headPoint,
@@ -337,39 +321,5 @@ class ProgressCirclePainter extends CustomPainter {
 
     final picture = pictureRecorder.endRecording();
     canvas.drawPicture(picture);
-  }
-
-  /// Draws a centred message.
-  void _maybeDrawText({
-    required Canvas canvas,
-    required Size size,
-    required double dx,
-    required double dy,
-    required String? centerMessage,
-    required double innerRadius,
-  }) {
-    if (centerMessage == null) return;
-
-    final textSpan = TextSpan(
-      text: centerMessage,
-      style: style.centerMessageStyle ??
-          const TextStyle(
-            color: Colors.black,
-            fontSize: 14,
-          ),
-    );
-
-    final textPainter = TextPainter(
-      text: textSpan,
-      textDirection: TextDirection.ltr,
-      textAlign: TextAlign.center,
-    )..layout(maxWidth: innerRadius);
-
-    final textPoint = Offset(
-      dx - textPainter.size.width / 2,
-      dy - textPainter.size.height / 2,
-    );
-
-    textPainter.paint(canvas, textPoint);
   }
 }

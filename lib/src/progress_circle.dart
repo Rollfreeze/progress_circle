@@ -53,14 +53,44 @@ class ProgressCircle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      size: size,
-      painter: ProgressCirclePainter(
-        total: total,
-        completed: completed,
-        completedPercent: completedPercent,
-        style: style,
+    return ClipOval(
+      child: ClipPath(
+        clipper: _InnerCircleClipper(size, style),
+        child: CustomPaint(
+          size: size,
+          painter: ProgressCirclePainter(
+            total: total,
+            completed: completed,
+            completedPercent: completedPercent,
+            style: style,
+          ),
+        ),
       ),
     );
+  }
+}
+
+class _InnerCircleClipper extends CustomClipper<Path> {
+  /// Size of the widget.
+  final Size size;
+
+  /// Style properties for the widget.
+  final ProgressCircleStyle style;
+
+  const _InnerCircleClipper(this.size, this.style);
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) => true;
+
+  @override
+  Path getClip(Size size) {
+    final outerCircleRadius = size.width / 2;
+    final innerCircleRadius = outerCircleRadius - style.arcWidth;
+    final center = Offset(size.width / 2, size.height / 2);
+
+    return Path()
+      ..addRect(Rect.fromLTWH(0, 0, size.width, size.height))
+      ..addOval(Rect.fromCircle(center: center, radius: innerCircleRadius))
+      ..fillType = PathFillType.evenOdd;
   }
 }
