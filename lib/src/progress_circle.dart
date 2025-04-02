@@ -55,7 +55,7 @@ class ProgressCircle extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipOval(
       child: ClipPath(
-        clipper: _InnerCircleClipper(size, style),
+        clipper: _Clipper(size, style),
         child: CustomPaint(
           size: size,
           painter: ProgressCirclePainter(
@@ -70,14 +70,15 @@ class ProgressCircle extends StatelessWidget {
   }
 }
 
-class _InnerCircleClipper extends CustomClipper<Path> {
+/// Clippers everything inside and outside the progress curve.
+class _Clipper extends CustomClipper<Path> {
   /// Size of the widget.
   final Size size;
 
   /// Style properties for the widget.
   final ProgressCircleStyle style;
 
-  const _InnerCircleClipper(this.size, this.style);
+  const _Clipper(this.size, this.style);
 
   @override
   bool shouldReclip(covariant CustomClipper<Path> oldClipper) => true;
