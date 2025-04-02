@@ -176,6 +176,12 @@ class ProgressCirclePainter extends CustomPainter {
     canvas.translate(center.dx, center.dy);
     _rotateProgressClockwise(canvas: canvas);
 
+    _drawHeadShadow(
+      headPoint: headPoint,
+      headRadius: headRadius,
+      canvas: canvas,
+    );
+
     canvas.drawCircle(
       headPoint,
       headRadius,
@@ -185,6 +191,28 @@ class ProgressCirclePainter extends CustomPainter {
     _maybeDrawProgressHeadIcon(
       headPoint: headPoint,
       canvas: canvas,
+    );
+  }
+
+  void _drawHeadShadow({
+    required Offset headPoint,
+    required double headRadius,
+    required Canvas canvas,
+  }) {
+    Paint shadowPaint = Paint()
+      ..color = Colors.black.withValues(alpha: 0.8) // Shadow color
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4); // Blur effect
+
+    // Draw the shadow (behind the circle)
+    canvas.drawArc(
+      Rect.fromCircle(
+        center: headPoint,
+        radius: headRadius,
+      ),
+      0,
+      pi,
+      true,
+      shadowPaint,
     );
   }
 
