@@ -158,13 +158,11 @@ class ProgressCirclePainter extends CustomPainter {
     canvas.translate(center.dx, center.dy);
     _rotateProgressClockwise(canvas: canvas);
 
-    if (_completedPercent >= 100) {
-      _drawHeadShadow(
-        headPoint: headPoint,
-        headRadius: headRadius,
-        canvas: canvas,
-      );
-    }
+    _maybeDrawHeadShadow(
+      headPoint: headPoint,
+      headRadius: headRadius,
+      canvas: canvas,
+    );
 
     canvas.drawCircle(
       headPoint,
@@ -178,12 +176,19 @@ class ProgressCirclePainter extends CustomPainter {
     );
   }
 
-  void _drawHeadShadow({
+  void _maybeDrawHeadShadow({
     required Offset headPoint,
     required double headRadius,
     required Canvas canvas,
   }) {
-    Paint shadowPaint = Paint()
+    /// Percentage value at we have touch point between head and tail.
+    const contactPointPercent = 93.3;
+    if (_completedPercent < contactPointPercent) return;
+
+    final a = pi / 2 * (1 - ((_completedPercent - contactPointPercent) / 6.7));
+    final b = pi / 180 * (1 + 179 / 6.7 * (_completedPercent - contactPointPercent));
+
+    final shadowPaint = Paint()
       ..color = Colors.black.withValues(alpha: 0.8) // Shadow color
       ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4); // Blur effect
 
@@ -193,8 +198,10 @@ class ProgressCirclePainter extends CustomPainter {
         center: headPoint,
         radius: headRadius,
       ),
-      0,
-      pi,
+      a.clamp(0, pi / 2),
+      b.clamp(pi / 180, pi),
+      // 0,
+      // pi,
       true,
       shadowPaint,
     );
